@@ -1,0 +1,58 @@
+import { Project } from "../ts/projets";
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: "Cotelco",
+    description: "Maquetación frontend con WordPress y Tailwind CSS.",
+    image: "/img/img2.jpg",
+    technologies: ["WordPress", "Tailwind", "PHP"],
+    githubUrl: "https://github.com/torco34/cotelco",
+    demoUrl: "https://cotelco.com",
+  },
+  {
+    id: 2,
+    title: "Nuestra Señora Calendaría",
+    description: "React + integración con backend REST.",
+    image: "/img/img1.jpg",
+    technologies: ["React", "TypeScript", "REST API"],
+    githubUrl: "https://github.com/torco34/calendar",
+    demoUrl: "https://demo-calendar.com",
+  },
+  {
+    id: 3,
+    title: "Nuestra Señora Calendaría",
+    description: "React + integración con backend REST.",
+    image: "/img/img1.jpg",
+    technologies: ["React", "TypeScript", "REST API"],
+    githubUrl: "https://github.com/torco34/calendar",
+    demoUrl: "https://demo-calendar.com",
+  },
+  {
+    id: 4,
+    title: "Cotelco",
+    description: "Maquetación frontend con WordPress y Tailwind CSS.",
+    image: "/img/img2.jpg",
+    technologies: ["WordPress", "Tailwind", "PHP"],
+    githubUrl: "https://github.com/torco34/cotelco",
+    demoUrl: "https://cotelco.com",
+  },
+  {
+    id: 5,
+    title: "Nuestra Señora Calendaría",
+    description: "React + integración con backend REST.",
+    image: "/img/img1.jpg",
+    technologies: ["React", "TypeScript", "REST API"],
+    githubUrl: "https://github.com/torco34/calendar",
+    demoUrl: "https://demo-calendar.com",
+  },
+  {
+    id: 6,
+    title: "Nuestra Señora Calendaría",
+    description: "React + integración con backend REST.",
+    image: "/img/img1.jpg",
+    technologies: ["React", "TypeScript", "REST API"],
+    githubUrl: "https://github.com/torco34/calendar",
+    demoUrl: "https://demo-calendar.com",
+  },
+];
