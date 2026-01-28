@@ -5,16 +5,24 @@ import SearchBar from "./components/SearchBar";
 
 export default function Header() {
   const [search, setSearch] = useState("");
-  // const filteredUsers = users.filter((user) =>
-  //   user.toLowerCase().includes(search.toLowerCase())
-  // );
+  
   return (
-    <header className="background-base">
+    <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
-        <SearchBar placeholder="Buscar proyectos " onSearch={setSearch} />
-        <nav className="flex gap-6 items-center">
+        <div className="flex items-center space-x-4">
+          <div className="hidden md:block">
+            <h1 className="text-lg font-semibold text-gray-900">Portafolio</h1>
+            <p className="text-sm text-gray-600">Desarrollador Frontend</p>
+          </div>
+          <SearchBar placeholder="Buscar proyectos..." onSearch={setSearch} />
+        </div>
+        
+        <nav className="flex items-center space-x-4">
+          <button className="hidden md:flex items-center space-x-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+            <span className="text-sm font-medium text-gray-700">📧 Contacto</span>
+          </button>
           <select
-            className="border border-[#aa60c8]/60 rounded-full px-2 p-2 py-1 bg-white text-sm cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#aa60c8]/40 transition"
+            className="border border-gray-300 rounded-lg px-3 py-2 bg-white text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#aa60c8]/20 transition"
             onChange={(e) => console.log(e.target.value)}
           >
             <option value="es">🇨🇴 Español</option>

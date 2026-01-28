@@ -25,38 +25,55 @@ export default function Slider({ slides }: SliderComponentProps) {
   }, [slides.length]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <div className="rounded-2xl overflow-hidden bg-whit">
-        <div className="p-6 text-gray-300">
-          <div className="relative w-full h-56 md:h-64">
-            <Image
-              src={slides[current].image}
-              alt={slides[current].title}
-              fill
-              className="object-cover pb-4 rounded-md"
-              priority
-            />
-          </div>
-          <div className="w-full">
-            <h3 className="text-lg font-semibold">{slides[current].title}</h3>
-            <p className="mt-1">{slides[current].description}</p>
+    <div className="w-full">
+      <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+        <div className="relative h-64 md:h-72">
+          <Image
+            src={slides[current].image}
+            alt={slides[current].title}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+            <h3 className="text-xl font-bold text-white mb-2">{slides[current].title}</h3>
+            <p className="text-gray-200">{slides[current].description}</p>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col items-center justify-center text-white">
-        <div className="flex">
-          <button
-            onClick={prevSlide}
-            className="px-2 py-2 background-text rounded-full hover:bg-[rgba(85,85,71,0.4)] transition"
-          >
-            <StepBack />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="px-2 py-2 background-text rounded-full hover:bg-[rgba(85,85,71,0.4)] transition"
-          >
-            <StepForward />
-          </button>
+        
+        <div className="p-4 bg-gray-50 border-t border-gray-200">
+          <div className="flex items-center justify-between">
+            <div className="flex space-x-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrent(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === current ? 'bg-[#aa60c8]' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            <div className="flex space-x-2">
+              <button
+                onClick={prevSlide}
+                className="p-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                aria-label="Previous slide"
+              >
+                <StepBack className="w-4 h-4 text-gray-700" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="p-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                aria-label="Next slide"
+              >
+                <StepForward className="w-4 h-4 text-gray-700" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

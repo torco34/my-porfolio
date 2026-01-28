@@ -25,15 +25,16 @@ export default function SearchBar({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
-          className="w-full rounded-full border border-[#aa60c8]/60 bg-white py-2 pl-10 pr-4 text-xs transitio outline-none focus:outline-none
-            focus-visible:border-[#fdeb9e]/40
-            focus-visible:ring-2
-            focus-visible:ring-[#aa60c8] animate-pulse
+          className="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm transition-all outline-none focus:outline-none
+            focus:border-[#aa60c8]
+            focus:ring-2
+            focus:ring-[#aa60c8]/20
+            hover:border-gray-400
           "
         />
 
         <svg
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-[#aa60c8]"
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
           width="18"
           height="18"
           fill="none"

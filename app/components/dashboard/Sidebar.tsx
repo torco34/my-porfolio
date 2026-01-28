@@ -7,33 +7,26 @@ import { menuItems } from "@/app/data/dataHeader";
 
 export default function Sidebar(): JSX.Element {
   return (
-    <aside className="sticky font-medium top-0 shadow-lg w-67 background px- py-">
-      <div className="flex w-full justify-center pb-10">
-        <div className="relative w-full h-40  overflow-hidden">
-          <Image
-            src="/img/imfondo.jpg"
-            alt="Fondo"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80" />
-          <div className="absolute bottom-3 left-1/2  w-full -translate-x-1/2 flex flex-col items-center text-white">
+    <aside className="sticky top-0 h-screen w-64 bg-gray-900 border-r border-gray-800 shadow-lg">
+      <div className="p-6">
+        <div className="flex flex-col items-center">
+          <div className="relative w-24 h-24 mb-4">
             <Image
               src="/img/fotomia.jpg"
-              alt="Avatar"
-              width={64}
-              height={64}
-              className="rounded-full object-cover border-4 border-[#FFF] shadow-md"
+              alt="Torcoroma Arias"
+              fill
+              className="rounded-full object-cover border-4 border-[#aa60c8] shadow-lg"
             />
-            <h2 className="mt-2 font-bold">Software Developer</h2>
-            <p className="text-sm background-text font-bold text-center">
-              Frontend
-            </p>
           </div>
+          <h2 className="text-xl font-bold text-white">Torcoroma Arias</h2>
+          <p className="text-sm text-[#aa60c8] font-medium mt-1">Frontend Developer</p>
+          <p className="text-xs text-gray-400 mt-2 text-center">
+            React • Next.js • TypeScript
+          </p>
         </div>
       </div>
 
-      <nav className="flex justify-center flex-col items-center">
+      <nav className="px-4">
         {menuItems.map((item) => {
           const Icon = item.icon;
 
@@ -41,14 +34,23 @@ export default function Sidebar(): JSX.Element {
             <Link
               key={item.href}
               href={item.href}
-              className="flex items-center font-thin text-yellow-50 gap-2 my-1 px-3 text-sm w-60  hover:bg-[rgba(85,85,71,0.4)] py-2 rounded-full hover:border-[rgba(241,233,158,0.2)] hover:text-[#AA60C8]  transition"
+              className="flex items-center gap-3 px-4 py-3 mb-1 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors group"
             >
-              <Icon className="" size={18} />
-              <span>{item.label}</span>
+              <Icon className="w-5 h-5 group-hover:text-[#aa60c8] transition-colors" />
+              <span className="font-medium">{item.label}</span>
             </Link>
           );
         })}
       </nav>
+
+      <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-800">
+        <div className="text-center">
+          <p className="text-sm text-gray-400">Disponible para proyectos</p>
+          <button className="mt-3 w-full bg-[#aa60c8] text-white font-medium py-2 rounded-lg hover:bg-[#9a50b8] transition-colors">
+            Contactar
+          </button>
+        </div>
+      </div>
     </aside>
   );
 }

@@ -1,4 +1,6 @@
 import { Folder, Mail } from "lucide-react";
+
+import { HeroData } from "../ts/inicio";
 export const profileData = {
   name: "Torcoroma Arias",
   role: "Desarrollador Web Frontend",
@@ -47,3 +49,31 @@ export const slides = [
     image: "/img/img3.jpg",
   },
 ];
+// hero
+
+// export const heroData = {
+//   title: "Disponible para contratación",
+//   subtitle:
+//     "Transformo ideas en experiencias digitales excepcionales con tecnologías modernas.",
+//   stats: [
+//     { icon: Laptop, value: "2+", label: "Años experiencia" },
+//     { icon: Rocket, value: "15+", label: "Proyectos" },
+//     { icon: Atom, value: "React", label: "Stack principal" },
+//     { icon: Puzzle, value: "WordPress", label: "CMS" },
+//   ],
+// };
+// nuevo
+export const heroData: HeroData = {
+  name: "Torcoroma Arias",
+  role: "Desarrollador Frontend especializado en crear experiencias digitales excepcionales con React, Next.js y TypeScript.",
+  buttons: [
+    { label: "Ver Proyectos", variant: "primary" },
+    { label: "Descargar CV", variant: "secondary" },
+  ],
+  stats: [
+    { value: "2+", label: "Años Experiencia" },
+    { value: "15+", label: "Proyectos" },
+    { value: "100%", label: "Satisfacción" },
+    { value: "React", label: "Stack Principal" },
+  ],
+};

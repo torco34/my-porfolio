@@ -18,11 +18,12 @@ export type ProfileButton = {
 
 export default function ProfileCard() {
   return (
-    <div className="w-full max-w-3xl background-base  rounded-2xl shadow p-8">
+    <div className="w-full relative max-w-3xl background-base background-base-show rounded-2xl shadow p-8">
+      <div className="absolute inset-0 rounded-2xl bg-[#aa60c8]/6"></div>
       <h1 className="text-2xl font-bold">¡Hola! 👋</h1>
 
-      <h2 className="text-3xl font-bold mt-2 mb-4">Soy {profileData.name}</h2>
-      <span className="background-primary animate-pulse flex w-xs gap-2 font-bold px-3 py-1 text-white rounded-full border border-[rgba(241,158,210,0.2)]">
+      <h2 className="text-5xl font-bold mt-2 mb-4">Soy {profileData.name}</h2>
+      <span className="background-primary  backdrop-blur-sm rounded-full  flex w-xs gap-2 font-bold px-3 py-1 text-gray-100">
         <CodeXml />
         {profileData.role}
       </span>
