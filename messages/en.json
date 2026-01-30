@@ -1,0 +1,38 @@
+{
+  "Home": {
+    "services": {
+      "title": "Services",
+      "web": {
+        "title": "Web Development",
+        "description": "Custom web applications with modern technologies"
+      },
+      "wordpress": {
+        "title": "WordPress",
+        "description": "Custom theme and plugin development"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Technical advice and code reviews"
+      }
+    },
+    "tech": {
+      "title": "Tech Stack",
+      "subtitle": "Technologies I work with"
+    },
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "Ready to start your next project?",
+      "button": "Contact Me"
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "subtitle": "What clients say",
+      "rating": "5.0 Rating",
+      "content": {
+        "one": "Excellent work, delivered on time and exceeded expectations.",
+        "two": "Professional and highly skilled.",
+        "three": "Great communication and technical expertise."
+      }
+    }
+  }
+}
