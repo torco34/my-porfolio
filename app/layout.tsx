@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import Header from "./components/dashboard/Header";
-import Sidebar from "./components/dashboard/Sidebar";
 import Footer from "./components/Footer";
 
 import "./globals.css";
@@ -38,19 +37,13 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-50">
         <div className="min-h-screen flex flex-col">
-          <div className="flex flex-1">
-            <Sidebar />
-
-            <div className="flex-1 flex flex-col">
-              <Header />
-
-              <main className="flex-1 p-6 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                  {children}
-                </div>
-              </main>
+          <Header />
+          
+          <main className="flex-1 p-6 bg-gray-50">
+            <div className="max-w-7xl mx-auto">
+              {children}
             </div>
-          </div>
+          </main>
           
           <Footer />
         </div>

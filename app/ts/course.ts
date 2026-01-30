@@ -5,4 +5,10 @@ export type Course = {
   platform: string;
   year: string;
   technologies: string[];
+  level?: "beginner" | "intermediate" | "advanced";
+  duration?: string;
+  certificateUrl?: string | null;
+  progress?: number;
+  category?: "frontend" | "backend" | "devops" | "tools" | "ux";
+  completed?: boolean;
 };
