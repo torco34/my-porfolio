@@ -1,10 +1,10 @@
 import { Award, Code, Globe, Users } from "lucide-react";
 import Link from "next/link";
 
+import HeroHome from "../components/home/HeroHome";
+import Slider from "../components/Slider";
+import TestimonialCard from "../components/TestimonialCard";
 import { heroData, slides } from "../data/dataperfil";
-import HeroHome from "./components/home/HeroHome";
-import Slider from "./components/Slider";
-import TestimonialCard from "./components/TestimonialCard";
 
 export default function Home({ params }: { params: { locale: string } }) {
   return (

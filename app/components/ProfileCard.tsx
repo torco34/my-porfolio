@@ -1,7 +1,7 @@
 import { CodeXml } from "lucide-react";
 import Link from "next/link";
 
-import { profileData } from "../../data/dataperfil";
+import { profileData } from "../data/dataperfil";
 import Button from "./Button";
 
 export type ProfileData = {

@@ -13,10 +13,10 @@ import {
   X,
 } from "lucide-react";
 import { useMemo, useState } from "react";
+import CourseCard from "../../components/courses/CourseCard";
+import CourseModal from "../../components/courses/CourseModal";
 import { dataCourses } from "../../data/dataCourses";
 import { Course } from "../../ts/course";
-import CourseCard from "../components/courses/CourseCard";
-import CourseModal from "../components/courses/CourseModal";
 
 export default function CoursesPage() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);

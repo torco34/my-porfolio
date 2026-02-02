@@ -3,7 +3,7 @@
 import { StepBack, StepForward } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import type { SliderComponentProps } from "../../ts/inicio";
+import type { SliderComponentProps } from "../ts/inicio";
 
 export default function Slider({ slides }: SliderComponentProps) {
   const [current, setCurrent] = useState(0);

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Course } from "../../ts/course";
+import { Course } from "../ts/course";
 import CourseModal from "./Modal";
 type Props = {
   course: Course;

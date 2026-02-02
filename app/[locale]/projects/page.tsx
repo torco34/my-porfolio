@@ -2,8 +2,8 @@
 
 import { Filter, Grid, List, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import ProjectCard from "../../components/projects/ProjectCard";
 import { projects } from "../../data/dataProjects";
-import ProjectCard from "../components/projects/ProjectCard";
 
 export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState("");
