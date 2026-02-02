@@ -26,7 +26,7 @@ export default function Slider({ slides }: SliderComponentProps) {
 
   return (
     <div className="w-full">
-      <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+      <div className="bg-white rounded-xl overflow-hidden">
         <div className="relative h-64 md:h-72">
           <Image
             src={slides[current].image}
@@ -35,7 +35,7 @@ export default function Slider({ slides }: SliderComponentProps) {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/95 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <h3 className="text-xl font-bold text-white mb-2">
               {slides[current].title}

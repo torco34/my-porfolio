@@ -1,12 +1,14 @@
-import { Award, Code, Globe, Users } from "lucide-react";
-import Link from "next/link";
+import { Award } from "lucide-react";
+import { useTranslations } from "next-intl";
 
+import AboutSection from "../components/home/AboutSection";
+import FeaturedProjects from "../components/home/FeaturedProjects";
 import HeroHome from "../components/home/HeroHome";
-import Slider from "../components/Slider";
+import Services from "../components/home/Services";
 import TestimonialCard from "../components/TestimonialCard";
-import { slides } from "../data/dataperfil";
 
 export default function Home({ params }: { params: { locale: string } }) {
+  const t = useTranslations("Home");
   return (
     <div className="min-h-screen space-y-8">
       {/* Hero Section */}
@@ -16,92 +18,22 @@ export default function Home({ params }: { params: { locale: string } }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column - Profile & Skills */}
         <div className="lg:col-span-2 space-y-8">
-          {/* About Card */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Sobre Mí</h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Desarrollador Frontend con experiencia en proyectos reales,
-              incluyendo trabajos freelance. Especializado en crear interfaces
-              responsivas con React.js, Next.js y TypeScript, además de
-              experiencia en WordPress y PHP.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              También cuento con experiencia en integración frontend-backend y
-              conocimientos básicos en la creación de endpoints con Node.js y
-              Express.
-            </p>
-          </div>
+          <AboutSection />
 
           {/* Featured Projects */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-gray-900">
-                Proyectos Destacados
-              </h2>
-              <Link
-                href={`/${params.locale}/projects`}
-                className="text-[#aa60c8] font-medium hover:underline"
-              >
-                Ver todos →
-              </Link>
-            </div>
-            <Slider slides={slides} />
-          </div>
+          <FeaturedProjects locale={params.locale} />
         </div>
-        {/* Right Column - Services & Contact */}
+        {/* Right Column - Services & CTA */}
         <div className="space-y-8">
           {/* Services */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Servicios</h2>
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#aa60c8]/10 rounded-lg">
-                  <Code className="w-6 h-6 text-[#aa60c8]" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">
-                    Desarrollo Web
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Aplicaciones modernas con React y Next.js
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#aa60c8]/10 rounded-lg">
-                  <Globe className="w-6 h-6 text-[#aa60c8]" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">WordPress</h3>
-                  <p className="text-sm text-gray-600">
-                    Sitios web y temas personalizados
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#aa60c8]/10 rounded-lg">
-                  <Users className="w-6 h-6 text-[#aa60c8]" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">Consultoría</h3>
-                  <p className="text-sm text-gray-600">
-                    Optimización y mejores prácticas
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Services />
 
           {/* CTA Card */}
           <div className="bg-linear-to-br from-[#aa60c8] to-purple-600 rounded-2xl shadow-lg p-8 text-white">
-            <h2 className="text-2xl font-bold mb-4">
-              ¿Listo para trabajar juntos?
-            </h2>
-            <p className="mb-6 opacity-90">
-              Transformemos tus ideas en experiencias digitales excepcionales.
-            </p>
+            <h2 className="text-2xl font-bold mb-4">{t("cta.title")}</h2>
+            <p className="mb-6 opacity-90">{t("cta.description")}</p>
             <button className="w-full bg-white text-[#aa60c8] font-medium py-3 rounded-lg hover:bg-gray-100 transition-colors">
-              Contactar Ahora
+              {t("cta.button")}
             </button>
           </div>
         </div>
@@ -110,8 +42,9 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* Tech Stack */}
       <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
         <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-          Stack Tecnológico
+          {t("tech.title")}
         </h2>
+        <p className="text-gray-600 text-center mb-6">{t("tech.subtitle")}</p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {[
             { name: "React", color: "bg-blue-50 text-blue-700" },
@@ -138,13 +71,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Testimonios</h2>
-            <p className="text-gray-600">Lo que dicen clientes y colegas</p>
+            <h2 className="text-2xl font-bold text-gray-900">
+              {t("testimonials.title")}
+            </h2>
+            <p className="text-gray-600">{t("testimonials.subtitle")}</p>
           </div>
           <div className="flex items-center gap-2">
             <Award className="w-5 h-5 text-yellow-500" />
             <span className="text-sm font-medium text-gray-700">
-              4.9/5 Rating
+              {t("testimonials.rating")}
             </span>
           </div>
         </div>
@@ -153,21 +88,21 @@ export default function Home({ params }: { params: { locale: string } }) {
             name="María González"
             role="Product Manager"
             company="TechCorp"
-            content="Excelente trabajo en nuestro dashboard. Entregó a tiempo y superó expectativas."
+            content={t("testimonials.content.one")}
             rating={5}
           />
           <TestimonialCard
             name="Carlos Rodríguez"
             role="CEO"
             company="StartupXYZ"
-            content="Profesional y detallista. Su código es limpio y bien documentado."
+            content={t("testimonials.content.two")}
             rating={5}
           />
           <TestimonialCard
             name="Ana Martínez"
             role="Design Lead"
             company="Creative Agency"
-            content="Gran colaborador. Entiende rápido los requerimientos y propone mejoras."
+            content={t("testimonials.content.three")}
             rating={4}
           />
         </div>

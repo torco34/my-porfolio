@@ -31,6 +31,11 @@
       "stack": "Stack Principal"
     }
   },
+  "AboutSection": {
+    "title": "Sobre Mí",
+    "paragraph1": "Desarrollador Frontend con experiencia en proyectos reales, incluyendo trabajos freelance. Especializado en crear interfaces responsivas con React.js, Next.js y TypeScript, además de experiencia en WordPress y PHP.",
+    "paragraph2": "También cuento con experiencia en integración frontend-backend y conocimientos básicos en la creación de endpoints con Node.js y Express."
+  },
   "Home": {
     "services": {
       "title": "Servicios",
@@ -65,28 +70,24 @@
         "two": "Profesional y altamente capacitada.",
         "three": "Gran comunicación y experiencia técnica."
       }
+    },
+    "featuredProjects": {
+      "title": "Proyectos Destacados",
+      "viewAll": "Ver todos →"
     }
-  }
-}
-    },
-    "tech": {
-      "title": "Tech Stack",
-      "subtitle": "Tecnologías con las que trabajo"
-    },
-    "cta": {
-      "title": "Trabajemos Juntos",
-      "description": "¿Listo para comenzar tu próximo proyecto?",
-      "button": "Contáctame"
-    },
-    "testimonials": {
-      "title": "Testimonios",
-      "subtitle": "Lo que dicen los clientes",
-      "rating": "5.0 Calificación",
-      "content": {
-        "one": "Excelente trabajo, entregado a tiempo y superó expectativas.",
-        "two": "Profesional y altamente capacitada.",
-        "three": "Gran comunicación y experiencia técnica."
-      }
+  },
+  "Projects": {
+    "card": {
+      "showLess": "Mostrar menos",
+      "showMore": "Ver más detalles",
+      "projectDetails": "Detalles del Proyecto",
+      "technologiesUsed": "Tecnologías Utilizadas",
+      "code": "Código",
+      "demo": "Demo",
+      "viewLess": "Ver menos",
+      "viewDetails": "Ver detalles",
+      "techs": "techs",
+      "more": "más"
     }
   }
 }

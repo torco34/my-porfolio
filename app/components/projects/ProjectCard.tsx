@@ -3,6 +3,7 @@
 import { Project } from "@/app/ts/projets";
 import { useState } from "react";
 import { ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ProjectCardProps {
   project: Project;
@@ -10,6 +11,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const t = useTranslations("Projects.card");
 
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
@@ -23,7 +25,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <div className="absolute top-4 right-4 flex gap-2">
           <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-800 rounded-full">
-            {project.technologies.length} techs
+            {project.technologies.length} {t("techs")}
           </span>
         </div>
       </div>
@@ -38,7 +40,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-            aria-label={isExpanded ? "Mostrar menos" : "Ver más detalles"}
+            aria-label={isExpanded ? t("showLess") : t("showMore")}
           >
             {isExpanded ? (
               <ChevronUp className="w-5 h-5 text-gray-600" />
@@ -56,11 +58,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Expanded Details */}
         {isExpanded && (
           <div className="mt-4 pt-4 border-t border-gray-100 animate-fade-in">
-            <h4 className="font-semibold text-gray-900 mb-2">Detalles del Proyecto</h4>
+            <h4 className="font-semibold text-gray-900 mb-2">{t("projectDetails")}</h4>
             <p className="text-gray-700 mb-4">{project.description}</p>
             
             <div className="mb-4">
-              <h5 className="font-medium text-gray-900 mb-2">Tecnologías Utilizadas</h5>
+              <h5 className="font-medium text-gray-900 mb-2">{t("technologiesUsed")}</h5>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
                   <span
@@ -88,7 +90,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
             {project.technologies.length > 3 && (
               <span className="px-3 py-1 bg-gray-200 text-gray-600 text-sm font-medium rounded-full">
-                +{project.technologies.length - 3} más
+                +{project.technologies.length - 3} {t("more")}
               </span>
             )}
           </div>
@@ -104,7 +106,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
             >
               <Github className="w-4 h-4" />
-              <span className="font-medium">Código</span>
+              <span className="font-medium">{t("code")}</span>
             </a>
             <a
               href={project.demoUrl}
@@ -113,7 +115,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              <span className="font-medium">Demo</span>
+              <span className="font-medium">{t("demo")}</span>
             </a>
           </div>
           
@@ -121,7 +123,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             onClick={() => setIsExpanded(!isExpanded)}
             className="text-blue-600 hover:text-blue-800 font-medium text-sm"
           >
-            {isExpanded ? "Ver menos" : "Ver detalles"}
+            {isExpanded ? t("viewLess") : t("viewDetails")}
           </button>
         </div>
       </div>

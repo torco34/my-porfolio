@@ -9,7 +9,6 @@ export default function HeroHome() {
   return (
     <section className="relative overflow-hidden rounded-2xl bg-linear-to-br from-gray-900 to-gray-950 border border-gray-800">
       <div className="absolute inset-0 bg-[url('/img/fondo1.jpg')] bg-cover bg-center opacity-40" />
-
       <div className="relative p-8 md:p-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
@@ -18,9 +17,7 @@ export default function HeroHome() {
                 {t("greeting")}{" "}
                 <span className="text-[#aa60c8]">{t("name")}</span>
               </h1>
-
               <p className="text-xl text-gray-300 mb-6">{t("role")}</p>
-
               <div className="flex flex-wrap gap-4">
                 {HERO_BUTTONS.map((btn, index) => (
                   <button
@@ -36,7 +33,6 @@ export default function HeroHome() {
                 ))}
               </div>
             </div>
-
             <div className="grid grid-cols-2 gap-4">
               {HERO_STATS.map((stat, index) => (
                 <div

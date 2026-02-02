@@ -31,6 +31,11 @@
       "stack": "Main Stack"
     }
   },
+  "AboutSection": {
+    "title": "About Me",
+    "paragraph1": "Frontend Developer with experience in real projects, including freelance work. Specialized in creating responsive interfaces with React.js, Next.js and TypeScript, plus experience in WordPress and PHP.",
+    "paragraph2": "I also have experience in frontend-backend integration and basic knowledge in creating endpoints with Node.js and Express."
+  },
   "Home": {
     "services": {
       "title": "Services",
@@ -65,6 +70,24 @@
         "two": "Professional and highly skilled.",
         "three": "Great communication and technical expertise."
       }
+    },
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "viewAll": "View all →"
+    }
+  },
+  "Projects": {
+    "card": {
+      "showLess": "Show less",
+      "showMore": "Show more details",
+      "projectDetails": "Project Details",
+      "technologiesUsed": "Technologies Used",
+      "code": "Code",
+      "demo": "Demo",
+      "viewLess": "View less",
+      "viewDetails": "View details",
+      "techs": "techs",
+      "more": "more"
     }
   }
 }
