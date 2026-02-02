@@ -18,14 +18,14 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-xs md:max-w-md">
       <div className="relative">
         <input
           type="text"
           value={value}
           onChange={handleChange}
           placeholder={t("placeholder")}
-          className="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm transition-all outline-none focus:outline-none
+          className="w-full rounded-lg border border-gray-300 bg-white py-2 md:py-2.5 pl-8 md:pl-10 pr-3 md:pr-4 text-sm transition-all outline-none focus:outline-none
             focus:border-[#aa60c8]
             focus:ring-2
             focus:ring-[#aa60c8]/20
@@ -34,9 +34,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         />
 
         <svg
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-          width="18"
-          height="18"
+          className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 md:w-5 md:h-5"
           fill="none"
           viewBox="0 0 24 24"
         >
