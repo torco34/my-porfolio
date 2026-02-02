@@ -10,8 +10,6 @@ export default function LanguageSelector() {
 
   function onChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const nextLocale = e.target.value;
-
-    // 🔑 esto es CLAVE
     router.replace(`/${nextLocale}${pathname.replace(/^\/(es|en)/, "")}`);
   }
 

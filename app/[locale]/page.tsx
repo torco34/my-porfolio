@@ -4,14 +4,13 @@ import Link from "next/link";
 import HeroHome from "../components/home/HeroHome";
 import Slider from "../components/Slider";
 import TestimonialCard from "../components/TestimonialCard";
-import { heroData, slides } from "../data/dataperfil";
+import { slides } from "../data/dataperfil";
 
 export default function Home({ params }: { params: { locale: string } }) {
   return (
     <div className="min-h-screen space-y-8">
       {/* Hero Section */}
-
-      <HeroHome {...heroData} />
+      <HeroHome />
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

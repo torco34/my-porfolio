@@ -14,7 +14,22 @@
     "search": {
       "placeholder": "Buscar proyectos..."
     },
-    "contact": "Contacto"
+    "contact": "contacto"
+  },
+  "HeroHome": {
+    "greeting": "Hola, soy",
+    "name": "Torcoroma Arias",
+    "role": "Desarrollador Frontend especializado en crear experiencias digitales excepcionales con React, Next.js y TypeScript.",
+    "buttons": {
+      "projects": "Ver Proyectos",
+      "cv": "Descargar CV"
+    },
+    "stats": {
+      "experience": "Años Experiencia",
+      "projects": "Proyectos",
+      "satisfaction": "Satisfacción",
+      "stack": "Stack Principal"
+    }
   },
   "Home": {
     "services": {
@@ -31,6 +46,28 @@
         "title": "Consultoría",
         "description": "Asesoría técnica y revisiones de código"
       }
+    },
+    "tech": {
+      "title": "Tech Stack",
+      "subtitle": "Tecnologías con las que trabajo"
+    },
+    "cta": {
+      "title": "Trabajemos Juntos",
+      "description": "¿Listo para comenzar tu próximo proyecto?",
+      "button": "Contáctame"
+    },
+    "testimonials": {
+      "title": "Testimonios",
+      "subtitle": "Lo que dicen los clientes",
+      "rating": "5.0 Calificación",
+      "content": {
+        "one": "Excelente trabajo, entregado a tiempo y superó expectativas.",
+        "two": "Profesional y altamente capacitada.",
+        "three": "Gran comunicación y experiencia técnica."
+      }
+    }
+  }
+}
     },
     "tech": {
       "title": "Tech Stack",

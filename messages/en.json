@@ -16,6 +16,21 @@
     },
     "contact": "Contact"
   },
+  "HeroHome": {
+    "greeting": "Hello, I'm",
+    "name": "Torcoroma Arias",
+    "role": "Frontend Developer specialized in creating exceptional digital experiences with React, Next.js and TypeScript.",
+    "buttons": {
+      "projects": "View Projects",
+      "cv": "Download CV"
+    },
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects",
+      "satisfaction": "Satisfaction",
+      "stack": "Main Stack"
+    }
+  },
   "Home": {
     "services": {
       "title": "Services",

@@ -8,7 +8,7 @@ export default function Logo() {
   return (
     <div className="w-full hidden md:block">
       <h1 className="text-md font-semibold text-gray-900">{t("title")}</h1>
-      <p className="text-sm text-gray-600">{t("subtitle")}</p>
+      <p className="text-sm text-purple-600">{t("subtitle")}</p>
     </div>
   );
 }
