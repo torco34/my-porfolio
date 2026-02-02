@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { projects } from "../data/dataProjects";
+import { Filter, Grid, List, Search, X } from "lucide-react";
+import { useMemo, useState } from "react";
+import { projects } from "../../data/dataProjects";
 import ProjectCard from "../components/projects/ProjectCard";
-import { Filter, Search, Grid, List, X } from "lucide-react";
 
 export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,36 +14,35 @@ export default function ProjectsPage() {
   // Extract all unique technologies
   const allTechnologies = useMemo(() => {
     const techs = new Set<string>();
-    projects.forEach(project => {
-      project.technologies.forEach(tech => techs.add(tech));
+    projects.forEach((project) => {
+      project.technologies.forEach((tech) => techs.add(tech));
     });
     return Array.from(techs).sort();
   }, []);
 
   // Filter projects
   const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
+    return projects.filter((project) => {
       // Search term filter
-      const matchesSearch = 
+      const matchesSearch =
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.technologies.some(tech => 
-          tech.toLowerCase().includes(searchTerm.toLowerCase())
+        project.technologies.some((tech) =>
+          tech.toLowerCase().includes(searchTerm.toLowerCase()),
         );
 
       // Technology filter
-      const matchesTechs = selectedTechs.length === 0 || 
-        selectedTechs.every(tech => project.technologies.includes(tech));
+      const matchesTechs =
+        selectedTechs.length === 0 ||
+        selectedTechs.every((tech) => project.technologies.includes(tech));
 
       return matchesSearch && matchesTechs;
     });
   }, [searchTerm, selectedTechs]);
 
   const toggleTech = (tech: string) => {
-    setSelectedTechs(prev =>
-      prev.includes(tech)
-        ? prev.filter(t => t !== tech)
-        : [...prev, tech]
+    setSelectedTechs((prev) =>
+      prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech],
     );
   };
 
@@ -58,10 +57,13 @@ export default function ProjectsPage() {
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Mis Proyectos</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Mis Proyectos
+            </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Explora mi portafolio de proyectos desarrollados con las últimas tecnologías.
-              Cada proyecto incluye descripción detallada, tecnologías utilizadas y enlaces al código y demo.
+              Explora mi portafolio de proyectos desarrollados con las últimas
+              tecnologías. Cada proyecto incluye descripción detallada,
+              tecnologías utilizadas y enlaces al código y demo.
             </p>
           </div>
         </div>
@@ -73,15 +75,21 @@ export default function ProjectsPage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">{projects.length}</div>
+                <div className="text-2xl font-bold text-gray-900">
+                  {projects.length}
+                </div>
                 <div className="text-sm text-gray-600">Proyectos Totales</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">{allTechnologies.length}</div>
+                <div className="text-2xl font-bold text-gray-900">
+                  {allTechnologies.length}
+                </div>
                 <div className="text-sm text-gray-600">Tecnologías</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">{filteredProjects.length}</div>
+                <div className="text-2xl font-bold text-gray-900">
+                  {filteredProjects.length}
+                </div>
                 <div className="text-sm text-gray-600">Mostrando</div>
               </div>
             </div>
@@ -92,9 +100,9 @@ export default function ProjectsPage() {
                 <button
                   onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-colors ${
-                    viewMode === "grid" 
-                      ? "bg-white shadow-sm text-blue-600" 
-                      : "text-gray-600 hover:text-gray-900"
+                    viewMode === "grid" ?
+                      "bg-white shadow-sm text-blue-600"
+                    : "text-gray-600 hover:text-gray-900"
                   }`}
                   aria-label="Vista en cuadrícula"
                 >
@@ -103,9 +111,9 @@ export default function ProjectsPage() {
                 <button
                   onClick={() => setViewMode("list")}
                   className={`p-2 rounded-md transition-colors ${
-                    viewMode === "list" 
-                      ? "bg-white shadow-sm text-blue-600" 
-                      : "text-gray-600 hover:text-gray-900"
+                    viewMode === "list" ?
+                      "bg-white shadow-sm text-blue-600"
+                    : "text-gray-600 hover:text-gray-900"
                   }`}
                   aria-label="Vista en lista"
                 >
@@ -117,9 +125,9 @@ export default function ProjectsPage() {
               <button
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                  showFilters || selectedTechs.length > 0 || searchTerm
-                    ? "bg-blue-100 text-blue-700"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  showFilters || selectedTechs.length > 0 || searchTerm ?
+                    "bg-blue-100 text-blue-700"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 <Filter className="w-4 h-4" />
@@ -143,7 +151,9 @@ export default function ProjectsPage() {
             <div className="lg:w-1/4">
               <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900">Filtros</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Filtros
+                  </h3>
                   <button
                     onClick={clearFilters}
                     className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900"
@@ -172,7 +182,9 @@ export default function ProjectsPage() {
 
                 {/* Technologies Filter */}
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-3">Tecnologías</h4>
+                  <h4 className="font-medium text-gray-900 mb-3">
+                    Tecnologías
+                  </h4>
                   <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
                     {allTechnologies.map((tech) => (
                       <label
@@ -188,7 +200,9 @@ export default function ProjectsPage() {
                         <span className="text-gray-700">{tech}</span>
                         <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
                           {
-                            projects.filter(p => p.technologies.includes(tech)).length
+                            projects.filter((p) =>
+                              p.technologies.includes(tech),
+                            ).length
                           }
                         </span>
                       </label>
@@ -199,7 +213,9 @@ export default function ProjectsPage() {
                 {/* Selected Filters */}
                 {selectedTechs.length > 0 && (
                   <div className="mt-6 pt-6 border-t border-gray-200">
-                    <h4 className="font-medium text-gray-900 mb-2">Filtros activos</h4>
+                    <h4 className="font-medium text-gray-900 mb-2">
+                      Filtros activos
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedTechs.map((tech) => (
                         <span
@@ -224,8 +240,8 @@ export default function ProjectsPage() {
           )}
 
           {/* Projects Grid/List */}
-          <div className={`${showFilters ? 'lg:w-3/4' : 'w-full'}`}>
-            {filteredProjects.length === 0 ? (
+          <div className={`${showFilters ? "lg:w-3/4" : "w-full"}`}>
+            {filteredProjects.length === 0 ?
               <div className="text-center py-12">
                 <div className="text-gray-400 mb-4">
                   <Search className="w-16 h-16 mx-auto" />
@@ -243,29 +259,36 @@ export default function ProjectsPage() {
                   Limpiar todos los filtros
                 </button>
               </div>
-            ) : (
-              <div
+            : <div
                 className={
-                  viewMode === "grid"
-                    ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                    : "space-y-6"
+                  viewMode === "grid" ?
+                    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                  : "space-y-6"
                 }
               >
                 {filteredProjects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
                 ))}
               </div>
-            )}
+            }
 
             {/* Results Info */}
             {filteredProjects.length > 0 && (
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <p className="text-gray-600 text-center">
-                  Mostrando <span className="font-semibold text-gray-900">{filteredProjects.length}</span> de{" "}
-                  <span className="font-semibold text-gray-900">{projects.length}</span> proyectos
+                  Mostrando{" "}
+                  <span className="font-semibold text-gray-900">
+                    {filteredProjects.length}
+                  </span>{" "}
+                  de{" "}
+                  <span className="font-semibold text-gray-900">
+                    {projects.length}
+                  </span>{" "}
+                  proyectos
                   {selectedTechs.length > 0 && (
                     <span>
-                      {" "}filtrados por{" "}
+                      {" "}
+                      filtrados por{" "}
                       <span className="font-semibold text-gray-900">
                         {selectedTechs.join(", ")}
                       </span>
@@ -283,7 +306,8 @@ export default function ProjectsPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">¿Interesado en colaborar?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Si te gusta mi trabajo y quieres discutir un proyecto, no dudes en contactarme.
+            Si te gusta mi trabajo y quieres discutir un proyecto, no dudes en
+            contactarme.
           </p>
           <a
             href="/contact"

@@ -1,4 +1,21 @@
 {
+  "Header": {
+    "logo": {
+      "title": "Portfolio",
+      "subtitle": "Frontend Developer"
+    },
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "about": "About",
+      "experience": "Experience",
+      "courses": "Courses"
+    },
+    "search": {
+      "placeholder": "Search projects..."
+    },
+    "contact": "Contact"
+  },
   "Home": {
     "services": {
       "title": "Services",

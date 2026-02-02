@@ -1,11 +1,12 @@
 import { Award, Code, Globe, Users } from "lucide-react";
+import Link from "next/link";
 
+import { heroData, slides } from "../data/dataperfil";
 import HeroHome from "./components/home/HeroHome";
 import Slider from "./components/Slider";
 import TestimonialCard from "./components/TestimonialCard";
-import { heroData, slides } from "./data/dataperfil";
 
-export default function Home() {
+export default function Home({ params }: { params: { locale: string } }) {
   return (
     <div className="min-h-screen space-y-8">
       {/* Hero Section */}
@@ -38,12 +39,12 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-gray-900">
                 Proyectos Destacados
               </h2>
-              <a
-                href="/projects"
+              <Link
+                href={`/${params.locale}/projects`}
                 className="text-[#aa60c8] font-medium hover:underline"
               >
                 Ver todos →
-              </a>
+              </Link>
             </div>
             <Slider slides={slides} />
           </div>

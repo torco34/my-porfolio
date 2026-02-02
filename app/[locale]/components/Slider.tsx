@@ -3,7 +3,7 @@
 import { StepBack, StepForward } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import type { SliderComponentProps } from "../ts/inicio";
+import type { SliderComponentProps } from "../../ts/inicio";
 
 export default function Slider({ slides }: SliderComponentProps) {
   const [current, setCurrent] = useState(0);
@@ -37,11 +37,13 @@ export default function Slider({ slides }: SliderComponentProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h3 className="text-xl font-bold text-white mb-2">{slides[current].title}</h3>
+            <h3 className="text-xl font-bold text-white mb-2">
+              {slides[current].title}
+            </h3>
             <p className="text-gray-200">{slides[current].description}</p>
           </div>
         </div>
-        
+
         <div className="p-4 bg-gray-50 border-t border-gray-200">
           <div className="flex items-center justify-between">
             <div className="flex space-x-2">
@@ -50,13 +52,13 @@ export default function Slider({ slides }: SliderComponentProps) {
                   key={index}
                   onClick={() => setCurrent(index)}
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    index === current ? 'bg-[#aa60c8]' : 'bg-gray-300'
+                    index === current ? "bg-[#aa60c8]" : "bg-gray-300"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
-            
+
             <div className="flex space-x-2">
               <button
                 onClick={prevSlide}

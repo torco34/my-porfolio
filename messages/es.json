@@ -1,4 +1,21 @@
 {
+  "Header": {
+    "logo": {
+      "title": "Torcoroma Arias Ascanio",
+      "subtitle": "Desarrollador Frontend"
+    },
+    "nav": {
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "about": "Acerca de",
+      "experience": "Experiencia",
+      "courses": "Cursos"
+    },
+    "search": {
+      "placeholder": "Buscar proyectos..."
+    },
+    "contact": "Contacto"
+  },
   "Home": {
     "services": {
       "title": "Servicios",

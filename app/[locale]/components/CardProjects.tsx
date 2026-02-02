@@ -2,7 +2,7 @@
 
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import { Project } from "../ts/projets";
+import { Project } from "../../ts/projets";
 
 type Props = {
   project: Project;

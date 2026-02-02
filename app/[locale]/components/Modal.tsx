@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { Course } from "../ts/course";
+import { Course } from "../../ts/course";
 
 type Props = {
   course: Course;

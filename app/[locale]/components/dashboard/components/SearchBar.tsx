@@ -1,14 +1,14 @@
+"use client";
+
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 type SearchBarProps = {
-  placeholder?: string;
   onSearch: (value: string) => void;
 };
 
-export default function SearchBar({
-  placeholder = "Buscar...",
-  onSearch,
-}: SearchBarProps) {
+export default function SearchBar({ onSearch }: SearchBarProps) {
+  const t = useTranslations("Header.search");
   const [value, setValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +24,7 @@ export default function SearchBar({
           type="text"
           value={value}
           onChange={handleChange}
-          placeholder={placeholder}
+          placeholder={t("placeholder")}
           className="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm transition-all outline-none focus:outline-none
             focus:border-[#aa60c8]
             focus:ring-2

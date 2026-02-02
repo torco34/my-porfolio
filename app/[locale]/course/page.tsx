@@ -1,23 +1,22 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { dataCourses } from "../data/dataCourses";
-import CourseCard from "../components/courses/CourseCard";
-import CourseModal from "../components/courses/CourseModal";
-import { Course } from "../ts/course";
 import {
-  BookOpen,
-  Filter,
-  Search,
-  TrendingUp,
-  CheckCircle,
   BarChart3,
-  Award,
+  BookOpen,
+  CheckCircle,
   Clock,
+  Filter,
   Grid,
   List,
-  X
+  Search,
+  TrendingUp,
+  X,
 } from "lucide-react";
+import { useMemo, useState } from "react";
+import { dataCourses } from "../../data/dataCourses";
+import { Course } from "../../ts/course";
+import CourseCard from "../components/courses/CourseCard";
+import CourseModal from "../components/courses/CourseModal";
 
 export default function CoursesPage() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -31,7 +30,7 @@ export default function CoursesPage() {
   // Extract unique categories and levels
   const categories = useMemo(() => {
     const cats = new Set<string>();
-    dataCourses.forEach(course => {
+    dataCourses.forEach((course) => {
       if (course.category) cats.add(course.category);
     });
     return Array.from(cats).sort();
@@ -39,7 +38,7 @@ export default function CoursesPage() {
 
   const levels = useMemo(() => {
     const lvls = new Set<string>();
-    dataCourses.forEach(course => {
+    dataCourses.forEach((course) => {
       if (course.level) lvls.add(course.level);
     });
     return Array.from(lvls).sort();
@@ -47,40 +46,40 @@ export default function CoursesPage() {
 
   // Filter courses
   const filteredCourses = useMemo(() => {
-    return dataCourses.filter(course => {
+    return dataCourses.filter((course) => {
       // Search term filter
-      const matchesSearch = 
+      const matchesSearch =
         searchTerm === "" ||
         course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         course.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        course.technologies.some(tech => 
-          tech.toLowerCase().includes(searchTerm.toLowerCase())
+        course.technologies.some((tech) =>
+          tech.toLowerCase().includes(searchTerm.toLowerCase()),
         ) ||
         course.platform.toLowerCase().includes(searchTerm.toLowerCase());
 
       // Category filter
-      const matchesCategory = 
-        selectedCategory === "all" || 
-        course.category === selectedCategory;
+      const matchesCategory =
+        selectedCategory === "all" || course.category === selectedCategory;
 
       // Level filter
-      const matchesLevel = 
-        selectedLevel === "all" || 
-        course.level === selectedLevel;
+      const matchesLevel =
+        selectedLevel === "all" || course.level === selectedLevel;
 
       // Completed filter
-      const matchesCompleted = 
-        showCompleted === null || 
+      const matchesCompleted =
+        showCompleted === null ||
         (showCompleted ? course.completed : !course.completed);
 
-      return matchesSearch && matchesCategory && matchesLevel && matchesCompleted;
+      return (
+        matchesSearch && matchesCategory && matchesLevel && matchesCompleted
+      );
     });
   }, [searchTerm, selectedCategory, selectedLevel, showCompleted]);
 
   // Statistics
   const stats = useMemo(() => {
     const totalCourses = dataCourses.length;
-    const completedCourses = dataCourses.filter(c => c.completed).length;
+    const completedCourses = dataCourses.filter((c) => c.completed).length;
     const totalHours = dataCourses.reduce((sum, course) => {
       if (course.duration) {
         const hours = parseInt(course.duration.split(" ")[0]);
@@ -88,7 +87,9 @@ export default function CoursesPage() {
       }
       return sum;
     }, 0);
-    const avgProgress = dataCourses.reduce((sum, course) => sum + (course.progress || 0), 0) / dataCourses.length;
+    const avgProgress =
+      dataCourses.reduce((sum, course) => sum + (course.progress || 0), 0) /
+      dataCourses.length;
 
     return { totalCourses, completedCourses, totalHours, avgProgress };
   }, []);
@@ -106,21 +107,31 @@ export default function CoursesPage() {
 
   const getCategoryLabel = (category: string) => {
     switch (category) {
-      case "frontend": return "Frontend";
-      case "backend": return "Backend";
-      case "devops": return "DevOps";
-      case "tools": return "Herramientas";
-      case "ux": return "UX/UI";
-      default: return category;
+      case "frontend":
+        return "Frontend";
+      case "backend":
+        return "Backend";
+      case "devops":
+        return "DevOps";
+      case "tools":
+        return "Herramientas";
+      case "ux":
+        return "UX/UI";
+      default:
+        return category;
     }
   };
 
   const getLevelLabel = (level: string) => {
     switch (level) {
-      case "beginner": return "Principiante";
-      case "intermediate": return "Intermedio";
-      case "advanced": return "Avanzado";
-      default: return level;
+      case "beginner":
+        return "Principiante";
+      case "intermediate":
+        return "Intermedio";
+      case "advanced":
+        return "Avanzado";
+      default:
+        return level;
     }
   };
 
@@ -140,7 +151,8 @@ export default function CoursesPage() {
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Mis Cursos</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Una colección de cursos y certificaciones que he completado para mantenerme actualizado en el desarrollo frontend moderno.
+              Una colección de cursos y certificaciones que he completado para
+              mantenerme actualizado en el desarrollo frontend moderno.
             </p>
           </div>
         </div>
@@ -153,28 +165,36 @@ export default function CoursesPage() {
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <BookOpen className="w-6 h-6 text-blue-600" />
-                <div className="text-3xl font-bold text-gray-900">{stats.totalCourses}</div>
+                <div className="text-3xl font-bold text-gray-900">
+                  {stats.totalCourses}
+                </div>
               </div>
               <div className="text-sm text-gray-600">Cursos Totales</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <CheckCircle className="w-6 h-6 text-green-600" />
-                <div className="text-3xl font-bold text-gray-900">{stats.completedCourses}</div>
+                <div className="text-3xl font-bold text-gray-900">
+                  {stats.completedCourses}
+                </div>
               </div>
               <div className="text-sm text-gray-600">Completados</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Clock className="w-6 h-6 text-orange-600" />
-                <div className="text-3xl font-bold text-gray-900">{stats.totalHours}+</div>
+                <div className="text-3xl font-bold text-gray-900">
+                  {stats.totalHours}+
+                </div>
               </div>
               <div className="text-sm text-gray-600">Horas de Estudio</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <BarChart3 className="w-6 h-6 text-purple-600" />
-                <div className="text-3xl font-bold text-gray-900">{Math.round(stats.avgProgress)}%</div>
+                <div className="text-3xl font-bold text-gray-900">
+                  {Math.round(stats.avgProgress)}%
+                </div>
               </div>
               <div className="text-sm text-gray-600">Progreso Promedio</div>
             </div>
@@ -226,9 +246,9 @@ export default function CoursesPage() {
                   <button
                     onClick={() => setSelectedCategory("all")}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                      selectedCategory === "all"
-                        ? "bg-blue-50 text-blue-700 border border-blue-200"
-                        : "text-gray-700 hover:bg-gray-50"
+                      selectedCategory === "all" ?
+                        "bg-blue-50 text-blue-700 border border-blue-200"
+                      : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     Todas las categorías
@@ -238,9 +258,9 @@ export default function CoursesPage() {
                       key={category}
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                        selectedCategory === category
-                          ? "bg-blue-50 text-blue-700 border border-blue-200"
-                          : "text-gray-700 hover:bg-gray-50"
+                        selectedCategory === category ?
+                          "bg-blue-50 text-blue-700 border border-blue-200"
+                        : "text-gray-700 hover:bg-gray-50"
                       }`}
                     >
                       {getCategoryLabel(category)}
@@ -256,9 +276,9 @@ export default function CoursesPage() {
                   <button
                     onClick={() => setSelectedLevel("all")}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                      selectedLevel === "all"
-                        ? "bg-blue-50 text-blue-700 border border-blue-200"
-                        : "text-gray-700 hover:bg-gray-50"
+                      selectedLevel === "all" ?
+                        "bg-blue-50 text-blue-700 border border-blue-200"
+                      : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     Todos los niveles
@@ -268,9 +288,9 @@ export default function CoursesPage() {
                       key={level}
                       onClick={() => setSelectedLevel(level)}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                        selectedLevel === level
-                          ? "bg-blue-50 text-blue-700 border border-blue-200"
-                          : "text-gray-700 hover:bg-gray-50"
+                        selectedLevel === level ?
+                          "bg-blue-50 text-blue-700 border border-blue-200"
+                        : "text-gray-700 hover:bg-gray-50"
                       }`}
                     >
                       {getLevelLabel(level)}
@@ -286,9 +306,9 @@ export default function CoursesPage() {
                   <button
                     onClick={() => setShowCompleted(null)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                      showCompleted === null
-                        ? "bg-blue-50 text-blue-700 border border-blue-200"
-                        : "text-gray-700 hover:bg-gray-50"
+                      showCompleted === null ?
+                        "bg-blue-50 text-blue-700 border border-blue-200"
+                      : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     Todos los estados
@@ -296,9 +316,9 @@ export default function CoursesPage() {
                   <button
                     onClick={() => setShowCompleted(true)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                      showCompleted === true
-                        ? "bg-blue-50 text-blue-700 border border-blue-200"
-                        : "text-gray-700 hover:bg-gray-50"
+                      showCompleted === true ?
+                        "bg-blue-50 text-blue-700 border border-blue-200"
+                      : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     <div className="flex items-center gap-2">
@@ -309,9 +329,9 @@ export default function CoursesPage() {
                   <button
                     onClick={() => setShowCompleted(false)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                      showCompleted === false
-                        ? "bg-blue-50 text-blue-700 border border-blue-200"
-                        : "text-gray-700 hover:bg-gray-50"
+                      showCompleted === false ?
+                        "bg-blue-50 text-blue-700 border border-blue-200"
+                      : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     <div className="flex items-center gap-2">
@@ -329,9 +349,9 @@ export default function CoursesPage() {
                   <button
                     onClick={() => setViewMode("grid")}
                     className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-md transition-colors ${
-                      viewMode === "grid" 
-                        ? "bg-white shadow-sm text-blue-600" 
-                        : "text-gray-600 hover:text-gray-900"
+                      viewMode === "grid" ?
+                        "bg-white shadow-sm text-blue-600"
+                      : "text-gray-600 hover:text-gray-900"
                     }`}
                   >
                     <Grid className="w-4 h-4" />
@@ -340,9 +360,9 @@ export default function CoursesPage() {
                   <button
                     onClick={() => setViewMode("list")}
                     className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-md transition-colors ${
-                      viewMode === "list" 
-                        ? "bg-white shadow-sm text-blue-600" 
-                        : "text-gray-600 hover:text-gray-900"
+                      viewMode === "list" ?
+                        "bg-white shadow-sm text-blue-600"
+                      : "text-gray-600 hover:text-gray-900"
                     }`}
                   >
                     <List className="w-4 h-4" />
@@ -352,9 +372,14 @@ export default function CoursesPage() {
               </div>
 
               {/* Active Filters */}
-              {(selectedCategory !== "all" || selectedLevel !== "all" || showCompleted !== null || searchTerm) && (
+              {(selectedCategory !== "all" ||
+                selectedLevel !== "all" ||
+                showCompleted !== null ||
+                searchTerm) && (
                 <div className="mt-6 pt-6 border-t border-gray-200">
-                  <h4 className="font-medium text-gray-900 mb-2">Filtros activos</h4>
+                  <h4 className="font-medium text-gray-900 mb-2">
+                    Filtros activos
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedCategory !== "all" && (
                       <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">
@@ -411,9 +436,12 @@ export default function CoursesPage() {
             <div className="mb-8">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Catálogo de Cursos</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                    Catálogo de Cursos
+                  </h2>
                   <p className="text-gray-600">
-                    {filteredCourses.length} de {dataCourses.length} cursos encontrados
+                    {filteredCourses.length} de {dataCourses.length} cursos
+                    encontrados
                   </p>
                 </div>
                 <div className="flex items-center gap-4">
@@ -434,13 +462,14 @@ export default function CoursesPage() {
                 <div className="bg-white rounded-xl shadow-lg p-6">
                   {/* Mobile filter content would go here */}
                   <p className="text-gray-600 text-center">
-                    Usa los filtros en la versión de escritorio para mejores resultados
+                    Usa los filtros en la versión de escritorio para mejores
+                    resultados
                   </p>
                 </div>
               </div>
             )}
 
-            {filteredCourses.length === 0 ? (
+            {filteredCourses.length === 0 ?
               <div className="text-center py-12 bg-white rounded-xl shadow-lg">
                 <div className="text-gray-400 mb-4">
                   <BookOpen className="w-16 h-16 mx-auto" />
@@ -458,12 +487,11 @@ export default function CoursesPage() {
                   Limpiar todos los filtros
                 </button>
               </div>
-            ) : (
-              <div
+            : <div
                 className={
-                  viewMode === "grid"
-                    ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                    : "space-y-6"
+                  viewMode === "grid" ?
+                    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                  : "space-y-6"
                 }
               >
                 {filteredCourses.map((course) => (
@@ -474,7 +502,7 @@ export default function CoursesPage() {
                   />
                 ))}
               </div>
-            )}
+            }
 
             {/* Summary */}
             {filteredCourses.length > 0 && (
@@ -482,22 +510,34 @@ export default function CoursesPage() {
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-900">{filteredCourses.length}</div>
-                      <div className="text-sm text-gray-600">Cursos mostrados</div>
+                      <div className="text-2xl font-bold text-gray-900">
+                        {filteredCourses.length}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Cursos mostrados
+                      </div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-gray-900">
-                        {filteredCourses.filter(c => c.completed).length}
+                        {filteredCourses.filter((c) => c.completed).length}
                       </div>
-                      <div className="text-sm text-gray-600">Completados en resultados</div>
+                      <div className="text-sm text-gray-600">
+                        Completados en resultados
+                      </div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-gray-900">
                         {Math.round(
-                          filteredCourses.reduce((sum, c) => sum + (c.progress || 0), 0) / filteredCourses.length
-                        )}%
+                          filteredCourses.reduce(
+                            (sum, c) => sum + (c.progress || 0),
+                            0,
+                          ) / filteredCourses.length,
+                        )}
+                        %
                       </div>
-                      <div className="text-sm text-gray-600">Progreso promedio</div>
+                      <div className="text-sm text-gray-600">
+                        Progreso promedio
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -506,9 +546,12 @@ export default function CoursesPage() {
 
             {/* Call to Action */}
             <div className="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-center text-white">
-              <h3 className="text-2xl font-bold mb-4">¿Interesado en aprender?</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                ¿Interesado en aprender?
+              </h3>
               <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                El aprendizaje continuo es clave en el desarrollo web. Siempre estoy buscando nuevos cursos para mantenerme actualizado.
+                El aprendizaje continuo es clave en el desarrollo web. Siempre
+                estoy buscando nuevos cursos para mantenerme actualizado.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
