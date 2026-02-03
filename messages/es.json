@@ -61,6 +61,26 @@
       "description": "¿Listo para comenzar tu próximo proyecto?",
       "button": "Contáctame"
     },
+    "finalCta": {
+      "title": "Transformemos Tu Visión en Realidad Digital",
+      "subtitle": "Desde la idea inicial hasta el lanzamiento, te acompaño en cada paso del desarrollo de tu proyecto web",
+      "step1": {
+        "title": "Consulta Inicial",
+        "description": "Analizamos tus necesidades y definimos los objetivos del proyecto"
+      },
+      "step2": {
+        "title": "Planificación",
+        "description": "Diseñamos la estrategia y establecemos un cronograma realista"
+      },
+      "step3": {
+        "title": "Desarrollo y Entrega",
+        "description": "Implementamos la solución y te entregamos un producto funcional"
+      },
+      "ctaText": "¿Listo para dar el siguiente paso en tu proyecto digital?",
+      "primaryButton": "Agendar una Consulta",
+      "secondaryButton": "Ver Portafolio Completo",
+      "footerText": "Respuesta en menos de 24 horas • Sin compromiso inicial • Presupuesto personalizado"
+    },
     "testimonials": {
       "title": "Testimonios",
       "subtitle": "Lo que dicen los clientes",
