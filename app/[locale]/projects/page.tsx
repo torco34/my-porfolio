@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ProjectsHero from "../../components/projects/ProjectsHero";
 import ControlBar from "../../components/projects/ControlBar";
 import MainContent from "../../components/projects/MainContent";
+import InterestedCTA from "../../components/projects/InterestedCTA";
 import { projects } from "../../data/dataProjects";
 
 export default function ProjectsPage() {
@@ -86,21 +87,7 @@ export default function ProjectsPage() {
       />
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-r from-gray-900 to-blue-900 text-white py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Interesado en colaborar?</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Si te gusta mi trabajo y quieres discutir un proyecto, no dudes en
-            contactarme.
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Contactar Ahora
-          </a>
-        </div>
-      </div>
+      <InterestedCTA />
     </div>
   );
 }

@@ -127,6 +127,11 @@
         "filteredBy": "filtrados por"
       }
     },
+    "interested": {
+      "title": "¿Interesado en colaborar?",
+      "description": "Si te gusta mi trabajo y quieres discutir un proyecto, no dudes en contactarme.",
+      "button": "Contactar Ahora"
+    },
     "card": {
       "showLess": "Mostrar menos",
       "showMore": "Ver más detalles",

@@ -127,6 +127,11 @@
         "filteredBy": "filtered by"
       }
     },
+    "interested": {
+      "title": "Interested in collaborating?",
+      "description": "If you like my work and want to discuss a project, don't hesitate to contact me.",
+      "button": "Contact Now"
+    },
     "card": {
       "showLess": "Show less",
       "showMore": "Show more details",
