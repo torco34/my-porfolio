@@ -97,6 +97,15 @@
     }
   },
   "Projects": {
+    "hero": {
+      "title": "Mis Proyectos",
+      "description": "Explora mi portafolio de proyectos desarrollados con las últimas tecnologías. Cada proyecto incluye descripción detallada, tecnologías utilizadas y enlaces al código y demo.",
+      "stats": {
+        "total": "Proyectos Totales",
+        "technologies": "Tecnologías",
+        "showing": "Mostrando"
+      }
+    },
     "card": {
       "showLess": "Mostrar menos",
       "showMore": "Ver más detalles",

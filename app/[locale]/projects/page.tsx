@@ -3,6 +3,7 @@
 import { Filter, Grid, List, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import ProjectCard from "../../components/projects/ProjectCard";
+import ProjectsHero from "../../components/projects/ProjectsHero";
 import { projects } from "../../data/dataProjects";
 
 export default function ProjectsPage() {
@@ -54,44 +55,37 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-linear-to-r from-blue-600 to-purple-600 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Mis Proyectos
-            </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Explora mi portafolio de proyectos desarrollados con las últimas
-              tecnologías. Cada proyecto incluye descripción detallada,
-              tecnologías utilizadas y enlaces al código y demo.
-            </p>
-          </div>
-        </div>
-      </div>
+      <ProjectsHero
+        totalProjects={projects.length}
+        totalTechnologies={allTechnologies.length}
+        showingProjects={filteredProjects.length}
+      />
 
-      {/* Stats Bar */}
+      {/* Controls Bar */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">
-                  {projects.length}
-                </div>
-                <div className="text-sm text-gray-600">Proyectos Totales</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">
-                  {allTechnologies.length}
-                </div>
-                <div className="text-sm text-gray-600">Tecnologías</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">
+            <div className="text-center md:text-left">
+              <p className="text-gray-600">
+                Mostrando{" "}
+                <span className="font-semibold text-gray-900">
                   {filteredProjects.length}
-                </div>
-                <div className="text-sm text-gray-600">Mostrando</div>
-              </div>
+                </span>{" "}
+                de{" "}
+                <span className="font-semibold text-gray-900">
+                  {projects.length}
+                </span>{" "}
+                proyectos
+                {selectedTechs.length > 0 && (
+                  <span>
+                    {" "}
+                    filtrados por{" "}
+                    <span className="font-semibold text-gray-900">
+                      {selectedTechs.join(", ")}
+                    </span>
+                  </span>
+                )}
+              </p>
             </div>
 
             <div className="flex items-center gap-4">
@@ -272,31 +266,7 @@ export default function ProjectsPage() {
               </div>
             }
 
-            {/* Results Info */}
-            {filteredProjects.length > 0 && (
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <p className="text-gray-600 text-center">
-                  Mostrando{" "}
-                  <span className="font-semibold text-gray-900">
-                    {filteredProjects.length}
-                  </span>{" "}
-                  de{" "}
-                  <span className="font-semibold text-gray-900">
-                    {projects.length}
-                  </span>{" "}
-                  proyectos
-                  {selectedTechs.length > 0 && (
-                    <span>
-                      {" "}
-                      filtrados por{" "}
-                      <span className="font-semibold text-gray-900">
-                        {selectedTechs.join(", ")}
-                      </span>
-                    </span>
-                  )}
-                </p>
-              </div>
-            )}
+
           </div>
         </div>
       </div>

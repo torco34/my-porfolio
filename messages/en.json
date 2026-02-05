@@ -97,6 +97,15 @@
     }
   },
   "Projects": {
+    "hero": {
+      "title": "My Projects",
+      "description": "Explore my portfolio of projects developed with the latest technologies. Each project includes detailed description, technologies used and links to code and demo.",
+      "stats": {
+        "total": "Total Projects",
+        "technologies": "Technologies",
+        "showing": "Showing"
+      }
+    },
     "card": {
       "showLess": "Show less",
       "showMore": "Show more details",
