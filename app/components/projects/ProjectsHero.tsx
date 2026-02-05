@@ -1,12 +1,7 @@
 "use client";
 
+import { ProjectsHeroProps } from "@/app/ts/projets";
 import { useTranslations } from "next-intl";
-
-interface ProjectsHeroProps {
-  totalProjects: number;
-  totalTechnologies: number;
-  showingProjects: number;
-}
 
 export default function ProjectsHero({
   totalProjects,
@@ -16,7 +11,7 @@ export default function ProjectsHero({
   const t = useTranslations("Projects.hero");
 
   return (
-    <div className="bg-linear-to-r from-blue-600 to-[#F5824A] text-white py-12">
+    <div className="bg-linear-to-r from-[#aa60c8] to-[#030000] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("title")}</h1>

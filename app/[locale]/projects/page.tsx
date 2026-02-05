@@ -1,9 +1,10 @@
 "use client";
 
-import { Filter, Grid, List, Search, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import ProjectCard from "../../components/projects/ProjectCard";
 import ProjectsHero from "../../components/projects/ProjectsHero";
+import ControlBar from "../../components/projects/ControlBar";
 import { projects } from "../../data/dataProjects";
 
 export default function ProjectsPage() {
@@ -62,80 +63,15 @@ export default function ProjectsPage() {
       />
 
       {/* Controls Bar */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-center md:text-left">
-              <p className="text-gray-600">
-                Mostrando{" "}
-                <span className="font-semibold text-gray-900">
-                  {filteredProjects.length}
-                </span>{" "}
-                de{" "}
-                <span className="font-semibold text-gray-900">
-                  {projects.length}
-                </span>{" "}
-                proyectos
-                {selectedTechs.length > 0 && (
-                  <span>
-                    {" "}
-                    filtrados por{" "}
-                    <span className="font-semibold text-gray-900">
-                      {selectedTechs.join(", ")}
-                    </span>
-                  </span>
-                )}
-              </p>
-            </div>
-
-            <div className="flex items-center gap-4">
-              {/* View Toggle */}
-              <div className="flex bg-gray-100 rounded-lg p-1">
-                <button
-                  onClick={() => setViewMode("grid")}
-                  className={`p-2 rounded-md transition-colors ${
-                    viewMode === "grid" ?
-                      "bg-white shadow-sm text-blue-600"
-                    : "text-gray-600 hover:text-gray-900"
-                  }`}
-                  aria-label="Vista en cuadrícula"
-                >
-                  <Grid className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => setViewMode("list")}
-                  className={`p-2 rounded-md transition-colors ${
-                    viewMode === "list" ?
-                      "bg-white shadow-sm text-blue-600"
-                    : "text-gray-600 hover:text-gray-900"
-                  }`}
-                  aria-label="Vista en lista"
-                >
-                  <List className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Filter Toggle */}
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                  showFilters || selectedTechs.length > 0 || searchTerm ?
-                    "bg-blue-100 text-blue-700"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
-              >
-                <Filter className="w-4 h-4" />
-                Filtros
-                {(selectedTechs.length > 0 || searchTerm) && (
-                  <span className="bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                    {selectedTechs.length + (searchTerm ? 1 : 0)}
-                  </span>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ControlBar
+        filteredProjects={filteredProjects.length}
+        totalProjects={projects.length}
+        selectedTechs={selectedTechs}
+        viewMode={viewMode}
+        showFilters={showFilters}
+        onViewModeChange={setViewMode}
+        onToggleFilters={() => setShowFilters(!showFilters)}
+      />
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -265,8 +201,6 @@ export default function ProjectsPage() {
                 ))}
               </div>
             }
-
-
           </div>
         </div>
       </div>
