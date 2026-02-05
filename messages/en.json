@@ -106,6 +106,27 @@
         "showing": "Showing"
       }
     },
+    "mainContent": {
+      "filters": {
+        "title": "Filters",
+        "search": "Search projects",
+        "searchPlaceholder": "Search by title, description or technology...",
+        "technologies": "Technologies",
+        "activeFilters": "Active filters",
+        "clear": "Clear"
+      },
+      "noResults": {
+        "title": "No projects found",
+        "description": "Try other search terms or adjust the filters.",
+        "clearFilters": "Clear all filters"
+      },
+      "results": {
+        "showing": "Showing",
+        "of": "of",
+        "projects": "projects",
+        "filteredBy": "filtered by"
+      }
+    },
     "card": {
       "showLess": "Show less",
       "showMore": "Show more details",
