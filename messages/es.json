@@ -144,5 +144,27 @@
       "techs": "techs",
       "more": "más"
     }
+  },
+  "About": {
+    "hero": {
+      "connect": "Conéctate conmigo",
+      "downloadCV": "Descargar CV"
+    },
+    "content": {
+      "aboutMe": "Sobre Mí",
+      "experience": "Experiencia",
+      "skills": "Habilidades",
+      "education": "Educación",
+      "achievements": "Logros Principales",
+      "technicalSkills": "Habilidades Técnicas",
+      "tools": "Herramientas",
+      "softSkills": "Habilidades Blandas"
+    },
+    "cta": {
+      "title": "¿Listo para trabajar juntos?",
+      "description": "Si estás buscando un desarrollador frontend comprometido y apasionado por crear experiencias digitales excepcionales, ¡hablemos!",
+      "contactNow": "Contactar Ahora",
+      "viewProjects": "Ver Mis Proyectos"
+    }
   }
 }

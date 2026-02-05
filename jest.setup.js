@@ -13,6 +13,26 @@ jest.mock('next-intl', () => ({
           technologies: 'Tecnologías',
           showing: 'Mostrando'
         }
+      },
+      'About.hero': {
+        connect: 'Connect with me',
+        downloadCV: 'Download CV'
+      },
+      'About.content': {
+        aboutMe: 'About Me',
+        experience: 'Experience',
+        skills: 'Skills',
+        education: 'Education',
+        achievements: 'Main Achievements',
+        technicalSkills: 'Technical Skills',
+        tools: 'Tools',
+        softSkills: 'Soft Skills'
+      },
+      'About.cta': {
+        title: 'Ready to work together?',
+        description: "If you're looking for a committed frontend developer passionate about creating exceptional digital experiences, let's talk!",
+        contactNow: 'Contact Now',
+        viewProjects: 'View My Projects'
       }
     }
     

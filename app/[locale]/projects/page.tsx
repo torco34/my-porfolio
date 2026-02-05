@@ -1,10 +1,10 @@
 "use client";
 
+import MainContent from "@/app/components/projects/MainContent";
 import { useMemo, useState } from "react";
-import ProjectsHero from "../../components/projects/ProjectsHero";
 import ControlBar from "../../components/projects/ControlBar";
-import MainContent from "../../components/projects/MainContent";
 import InterestedCTA from "../../components/projects/InterestedCTA";
+import ProjectsHero from "../../components/projects/ProjectsHero";
 import { projects } from "../../data/dataProjects";
 
 export default function ProjectsPage() {
