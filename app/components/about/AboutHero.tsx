@@ -26,8 +26,22 @@ export default function AboutHero({ personalInfo, socialLinks }: AboutHeroProps)
     <div className="bg-white rounded-2xl shadow-xl p-8 sticky top-8">
       <div className="text-center mb-8">
         <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1">
-          <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-            <User className="w-16 h-16 text-gray-700" />
+          <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+            <img 
+              src="/profile.jpg" 
+              alt={personalInfo.name}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const fallback = document.createElement('div');
+                fallback.className = 'w-full h-full flex items-center justify-center';
+                const userIcon = document.createElement('div');
+                userIcon.innerHTML = '<svg class="w-16 h-16 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>';
+                fallback.appendChild(userIcon);
+                target.parentNode?.appendChild(fallback);
+              }}
+            />
           </div>
         </div>
         <h1 className="text-3xl font-bold text-gray-900">{personalInfo.name}</h1>

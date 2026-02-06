@@ -55,7 +55,7 @@ describe("AboutHero", () => {
   it("should render social links correctly", () => {
     render(<AboutHero {...defaultProps} />);
     
-    const socialLinksTitle = screen.getByText("connect");
+    const socialLinksTitle = screen.getByText("Conéctate conmigo");
     expect(socialLinksTitle).toBeInTheDocument();
     
     const socialLinks = screen.getAllByRole("link");
@@ -69,7 +69,7 @@ describe("AboutHero", () => {
   it("should render download CV button", () => {
     render(<AboutHero {...defaultProps} />);
     
-    const downloadButton = screen.getByText("downloadCV");
+    const downloadButton = screen.getByText("Descargar CV");
     expect(downloadButton).toBeInTheDocument();
     expect(downloadButton).toHaveClass("bg-gradient-to-r");
     expect(downloadButton).toHaveClass("from-blue-600");

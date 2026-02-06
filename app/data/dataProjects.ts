@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: "Dashboard Analytics",
     description:
       "Panel de control con gráficos interactivos y métricas en tiempo real. Visualización de datos con Chart.js y actualizaciones en vivo.",
-    image: "/img/img4.jpg",
+    image: "/img/img1.jpg",
     technologies: ["React", "Chart.js", "WebSocket", "Node.js", "Express"],
     githubUrl: "https://github.com/torco34/dashboard",
     demoUrl: "https://dashboard-demo.com",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     title: "Portafolio Personal",
     description:
       "Sitio web personal responsive con diseño moderno. Optimizado para SEO y performance con lazy loading de imágenes.",
-    image: "/img/img5.jpg",
+    image: "/img/img2.jpg",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     title: "Task Manager App",
     description:
       "Aplicación de gestión de tareas con drag & drop, etiquetas y recordatorios. Sincronización multiplataforma.",
-    image: "/img/img6.jpg",
+    image: "/img/img3.jpg",
     technologies: [
       "React Native",
       "Expo",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     title: "Weather Forecast",
     description:
       "Aplicación de pronóstico del tiempo con geolocalización y pronóstico de 7 días. Integración con OpenWeather API.",
-    image: "/img/img7.jpg",
+    image: "/img/fondo1.jpg",
     technologies: [
       "Vue.js",
       "Vuex",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     title: "Blog Platform",
     description:
       "Plataforma de blogging con editor markdown, comentarios y sistema de likes. Autenticación con OAuth.",
-    image: "/img/img8.jpg",
+    image: "/img/imfondo.jpg",
     technologies: ["Next.js", "Prisma", "PostgreSQL", "Markdown", "OAuth"],
     githubUrl: "https://github.com/torco34/blog",
     demoUrl: "https://blog-platform.com",

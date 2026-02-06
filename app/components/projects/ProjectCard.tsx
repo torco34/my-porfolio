@@ -4,6 +4,7 @@ import { Project } from "@/app/ts/projets";
 import { useState } from "react";
 import { ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
@@ -16,13 +17,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
       {/* Project Image */}
-      <div className="relative h-48 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-4xl font-bold text-gray-800/20">
-            {project.title.charAt(0)}
-          </div>
-        </div>
+      <div className="relative h-48 overflow-hidden bg-gray-100">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         <div className="absolute top-4 right-4 flex gap-2">
           <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-800 rounded-full">
             {project.technologies.length} {t("techs")}

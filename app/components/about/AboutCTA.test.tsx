@@ -17,7 +17,7 @@ describe("AboutCTA", () => {
   it("should render the title correctly", () => {
     render(<AboutCTA />);
     
-    const title = screen.getByText("title");
+    const title = screen.getByText("¿Listo para trabajar juntos?");
     expect(title).toBeInTheDocument();
     expect(title).toHaveClass("text-2xl");
   });
@@ -25,7 +25,7 @@ describe("AboutCTA", () => {
   it("should render the description correctly", () => {
     render(<AboutCTA />);
     
-    const description = screen.getByText("description");
+    const description = screen.getByText("Si estás buscando un desarrollador frontend comprometido y apasionado por crear experiencias digitales excepcionales, ¡hablemos!");
     expect(description).toBeInTheDocument();
     expect(description).toHaveClass("text-blue-100");
   });
@@ -33,8 +33,8 @@ describe("AboutCTA", () => {
   it("should render both buttons correctly", () => {
     render(<AboutCTA />);
     
-    const contactButton = screen.getByText("contactNow");
-    const viewProjectsButton = screen.getByText("viewProjects");
+    const contactButton = screen.getByText("Contactar Ahora");
+    const viewProjectsButton = screen.getByText("Ver Mis Proyectos");
     
     expect(contactButton).toBeInTheDocument();
     expect(viewProjectsButton).toBeInTheDocument();

@@ -15,24 +15,24 @@ jest.mock('next-intl', () => ({
         }
       },
       'About.hero': {
-        connect: 'Connect with me',
-        downloadCV: 'Download CV'
+        connect: 'Conéctate conmigo',
+        downloadCV: 'Descargar CV'
       },
       'About.content': {
-        aboutMe: 'About Me',
-        experience: 'Experience',
-        skills: 'Skills',
-        education: 'Education',
-        achievements: 'Main Achievements',
-        technicalSkills: 'Technical Skills',
-        tools: 'Tools',
-        softSkills: 'Soft Skills'
+        aboutMe: 'Sobre Mí',
+        experience: 'Experiencia',
+        skills: 'Habilidades',
+        education: 'Educación',
+        achievements: 'Logros Principales',
+        technicalSkills: 'Habilidades Técnicas',
+        tools: 'Herramientas',
+        softSkills: 'Habilidades Blandas'
       },
       'About.cta': {
-        title: 'Ready to work together?',
-        description: "If you're looking for a committed frontend developer passionate about creating exceptional digital experiences, let's talk!",
-        contactNow: 'Contact Now',
-        viewProjects: 'View My Projects'
+        title: '¿Listo para trabajar juntos?',
+        description: 'Si estás buscando un desarrollador frontend comprometido y apasionado por crear experiencias digitales excepcionales, ¡hablemos!',
+        contactNow: 'Contactar Ahora',
+        viewProjects: 'Ver Mis Proyectos'
       }
     }
     

@@ -7,8 +7,11 @@ export default function HeroHome() {
   const t = useTranslations("HeroHome");
 
   return (
-    <section className="relative overflow-hidden rounded-2xl bg-linear-to-br from-gray-900 to-gray-950 border border-gray-800">
-      <div className="absolute inset-0 bg-[url('/img/fondo1.jpg')] bg-cover bg-center opacity-40" />
+    <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800">
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-40"
+        style={{ backgroundImage: "url('/img/fondo1.jpg')" }}
+      />
       <div className="relative p-8 md:p-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">

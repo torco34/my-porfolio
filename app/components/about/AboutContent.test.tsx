@@ -66,7 +66,7 @@ describe("AboutContent", () => {
   it("should render About Me section correctly", () => {
     render(<AboutContent {...defaultProps} />);
     
-    const aboutMeTitle = screen.getByText("aboutMe");
+    const aboutMeTitle = screen.getByText("Sobre Mí");
     expect(aboutMeTitle).toBeInTheDocument();
     
     expect(screen.getByText("Passionate frontend developer with 5+ years of experience.")).toBeInTheDocument();
@@ -77,9 +77,9 @@ describe("AboutContent", () => {
   it("should render tabs correctly", () => {
     render(<AboutContent {...defaultProps} />);
     
-    expect(screen.getByText("experience")).toBeInTheDocument();
-    expect(screen.getByText("skills")).toBeInTheDocument();
-    expect(screen.getByText("education")).toBeInTheDocument();
+    expect(screen.getByText("Experiencia")).toBeInTheDocument();
+    expect(screen.getByText("Habilidades")).toBeInTheDocument();
+    expect(screen.getByText("Educación")).toBeInTheDocument();
   });
 
   it("should show Experience tab content by default", () => {
@@ -89,25 +89,25 @@ describe("AboutContent", () => {
     expect(screen.getByText("Tech Solutions Inc.")).toBeInTheDocument();
     expect(screen.getByText("2022 - Present")).toBeInTheDocument();
     expect(screen.getByText("Lead development of web applications with React and Next.js.")).toBeInTheDocument();
-    expect(screen.getByText("achievements")).toBeInTheDocument();
+    expect(screen.getByText("Logros Principales")).toBeInTheDocument();
     expect(screen.getByText("Reduced load time by 40% through code optimization")).toBeInTheDocument();
   });
 
   it("should switch to Skills tab when clicked", () => {
     render(<AboutContent {...defaultProps} />);
     
-    const skillsTab = screen.getByText("skills");
+    const skillsTab = screen.getByText("Habilidades");
     fireEvent.click(skillsTab);
     
-    expect(screen.getByText("technicalSkills")).toBeInTheDocument();
+    expect(screen.getByText("Habilidades Técnicas")).toBeInTheDocument();
     expect(screen.getByText("React")).toBeInTheDocument();
     expect(screen.getByText("95%")).toBeInTheDocument();
     expect(screen.getByText("TypeScript")).toBeInTheDocument();
     expect(screen.getByText("85%")).toBeInTheDocument();
-    expect(screen.getByText("tools")).toBeInTheDocument();
+    expect(screen.getByText("Herramientas")).toBeInTheDocument();
     expect(screen.getByText("Git")).toBeInTheDocument();
     expect(screen.getByText("VS Code")).toBeInTheDocument();
-    expect(screen.getByText("softSkills")).toBeInTheDocument();
+    expect(screen.getByText("Habilidades Blandas")).toBeInTheDocument();
     expect(screen.getByText("Effective communication")).toBeInTheDocument();
     expect(screen.getByText("Problem solving")).toBeInTheDocument();
   });
@@ -115,7 +115,7 @@ describe("AboutContent", () => {
   it("should switch to Education tab when clicked", () => {
     render(<AboutContent {...defaultProps} />);
     
-    const educationTab = screen.getByText("education");
+    const educationTab = screen.getByText("Educación");
     fireEvent.click(educationTab);
     
     expect(screen.getByText("Computer Science")).toBeInTheDocument();
@@ -127,7 +127,7 @@ describe("AboutContent", () => {
   it("should have correct CSS classes for tabs", () => {
     render(<AboutContent {...defaultProps} />);
     
-    const experienceTab = screen.getByText("experience");
+    const experienceTab = screen.getByText("Experiencia");
     expect(experienceTab).toHaveClass("text-blue-600");
     expect(experienceTab).toHaveClass("border-b-2");
     expect(experienceTab).toHaveClass("border-blue-600");
@@ -136,7 +136,7 @@ describe("AboutContent", () => {
   it("should render progress bars for skills", () => {
     render(<AboutContent {...defaultProps} />);
     
-    const skillsTab = screen.getByText("skills");
+    const skillsTab = screen.getByText("Habilidades");
     fireEvent.click(skillsTab);
     
     const progressBars = screen.getAllByRole("progressbar");
@@ -151,7 +151,7 @@ describe("AboutContent", () => {
   it("should have correct CSS classes for education items", () => {
     render(<AboutContent {...defaultProps} />);
     
-    const educationTab = screen.getByText("education");
+    const educationTab = screen.getByText("Educación");
     fireEvent.click(educationTab);
     
     const educationItem = screen.getByText("Computer Science").closest("div.bg-white");
