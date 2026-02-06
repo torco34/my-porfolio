@@ -17,7 +17,7 @@ describe("AboutCTA", () => {
   it("should render the title correctly", () => {
     render(<AboutCTA />);
     
-    const title = screen.getByText("¿Listo para trabajar juntos?");
+    const title = screen.getByText("Ready to work together?");
     expect(title).toBeInTheDocument();
     expect(title).toHaveClass("text-2xl");
   });
@@ -25,16 +25,16 @@ describe("AboutCTA", () => {
   it("should render the description correctly", () => {
     render(<AboutCTA />);
     
-    const description = screen.getByText("Si estás buscando un desarrollador frontend comprometido y apasionado por crear experiencias digitales excepcionales, ¡hablemos!");
+    const description = screen.getByText("If you're looking for a committed frontend developer passionate about creating exceptional digital experiences, let's talk!");
     expect(description).toBeInTheDocument();
-    expect(description).toHaveClass("text-blue-100");
+    expect(description).toHaveClass("text-purple-100");
   });
 
   it("should render both buttons correctly", () => {
     render(<AboutCTA />);
     
-    const contactButton = screen.getByText("Contactar Ahora");
-    const viewProjectsButton = screen.getByText("Ver Mis Proyectos");
+    const contactButton = screen.getByText("Contact Now");
+    const viewProjectsButton = screen.getByText("View My Projects");
     
     expect(contactButton).toBeInTheDocument();
     expect(viewProjectsButton).toBeInTheDocument();
@@ -48,8 +48,8 @@ describe("AboutCTA", () => {
     
     const container = screen.getByText("Ready to work together?").closest("div");
     expect(container).toHaveClass("bg-gradient-to-r");
-    expect(container).toHaveClass("from-blue-600");
-    expect(container).toHaveClass("to-purple-600");
+    expect(container).toHaveClass("from-purple-600");
+    expect(container).toHaveClass("to-purple-700");
     expect(container).toHaveClass("rounded-2xl");
     expect(container).toHaveClass("text-white");
   });
@@ -59,7 +59,7 @@ describe("AboutCTA", () => {
     
     const contactButton = screen.getByText("Contact Now");
     expect(contactButton).toHaveClass("bg-white");
-    expect(contactButton).toHaveClass("text-blue-600");
+    expect(contactButton).toHaveClass("text-purple-600");
     expect(contactButton).toHaveClass("rounded-lg");
     expect(contactButton).toHaveClass("hover:bg-gray-100");
   });

@@ -29,6 +29,7 @@ export default function MainContent({
   onSearchChange,
 }: MainContentProps) {
   const t = useTranslations("Projects.mainContent");
+  const tCard = useTranslations("Projects.card");
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -155,7 +156,22 @@ export default function MainContent({
               }
             >
               {filteredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <ProjectCard 
+                  key={project.id} 
+                  project={project}
+                  translations={{
+                    techs: tCard("techs"),
+                    showLess: tCard("showLess"),
+                    showMore: tCard("showMore"),
+                    more: tCard("more"),
+                    projectDetails: tCard("projectDetails"),
+                    technologiesUsed: tCard("technologiesUsed"),
+                    code: tCard("code"),
+                    demo: tCard("demo"),
+                    viewLess: tCard("viewLess"),
+                    viewDetails: tCard("viewDetails")
+                  }}
+                />
               ))}
             </div>
           )}

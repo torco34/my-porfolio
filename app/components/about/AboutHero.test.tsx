@@ -23,8 +23,8 @@ describe("AboutHero", () => {
     },
     socialLinks: [
       { platform: "GitHub", url: "https://github.com/john", icon: Github, color: "bg-gray-900" },
-      { platform: "LinkedIn", url: "https://linkedin.com/in/john", icon: Linkedin, color: "bg-blue-700" },
-      { platform: "Twitter", url: "https://twitter.com/john", icon: Twitter, color: "bg-blue-400" }
+      { platform: "LinkedIn", url: "https://linkedin.com/in/john", icon: Linkedin, color: "bg-purple-700" },
+      { platform: "Twitter", url: "https://twitter.com/john", icon: Twitter, color: "bg-purple-400" }
     ]
   };
 
@@ -41,7 +41,7 @@ describe("AboutHero", () => {
     
     const title = screen.getByText("Frontend Developer");
     expect(title).toBeInTheDocument();
-    expect(title).toHaveClass("text-blue-600");
+    expect(title).toHaveClass("text-purple-600");
   });
 
   it("should render personal information correctly", () => {
@@ -55,7 +55,7 @@ describe("AboutHero", () => {
   it("should render social links correctly", () => {
     render(<AboutHero {...defaultProps} />);
     
-    const socialLinksTitle = screen.getByText("Conéctate conmigo");
+    const socialLinksTitle = screen.getByText("connect");
     expect(socialLinksTitle).toBeInTheDocument();
     
     const socialLinks = screen.getAllByRole("link");
@@ -69,10 +69,10 @@ describe("AboutHero", () => {
   it("should render download CV button", () => {
     render(<AboutHero {...defaultProps} />);
     
-    const downloadButton = screen.getByText("Descargar CV");
+    const downloadButton = screen.getByText("downloadCV");
     expect(downloadButton).toBeInTheDocument();
     expect(downloadButton).toHaveClass("bg-gradient-to-r");
-    expect(downloadButton).toHaveClass("from-blue-600");
+    expect(downloadButton).toHaveClass("from-purple-600");
     expect(downloadButton).toHaveClass("to-purple-600");
   });
 
@@ -92,7 +92,7 @@ describe("AboutHero", () => {
     expect(profileContainer).toBeInTheDocument();
     
     const gradientCircle = profileContainer?.querySelector("div.bg-gradient-to-r");
-    expect(gradientCircle).toHaveClass("from-blue-500");
-    expect(gradientCircle).toHaveClass("to-purple-500");
+    expect(gradientCircle).toHaveClass("from-purple-500");
+    expect(gradientCircle).toHaveClass("to-purple-600");
   });
 });

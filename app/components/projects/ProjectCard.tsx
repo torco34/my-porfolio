@@ -3,16 +3,26 @@
 import { Project } from "@/app/ts/projets";
 import { useState } from "react";
 import { ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
+  translations: {
+    techs: string;
+    showLess: string;
+    showMore: string;
+    more: string;
+    projectDetails: string;
+    technologiesUsed: string;
+    code: string;
+    demo: string;
+    viewLess: string;
+    viewDetails: string;
+  };
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, translations }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const t = useTranslations("Projects.card");
 
   return (
     <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50">
@@ -33,7 +43,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Badge de tecnologías */}
         <div className="absolute top-4 right-4">
           <span className="px-4 py-2 bg-gradient-to-r from-[#aa60c8]/90 to-[#8a40a8]/90 backdrop-blur-md text-white text-xs font-semibold rounded-full shadow-lg">
-            {project.technologies.length} {t("techs")}
+            {project.technologies.length} {translations.techs}
           </span>
         </div>
         
@@ -58,7 +68,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="ml-4 p-2.5 bg-gray-100 hover:bg-[#aa60c8]/10 rounded-xl transition-all duration-300 group-hover:scale-110"
-            aria-label={isExpanded ? t("showLess") : t("showMore")}
+            aria-label={isExpanded ? translations.showLess : translations.showMore}
           >
             {isExpanded ? (
               <ChevronUp className="w-5 h-5 text-[#aa60c8]" />
@@ -86,7 +96,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
             {project.technologies.length > 4 && (
               <span className="px-3 py-1.5 bg-gradient-to-r from-[#aa60c8]/10 to-[#ca80e8]/10 text-[#8a40a8] text-sm font-semibold rounded-lg border border-[#aa60c8]/20">
-                +{project.technologies.length - 4} {t("more")}
+                +{project.technologies.length - 4} {translations.more}
               </span>
             )}
           </div>
@@ -97,7 +107,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="mt-6 pt-6 border-t border-gray-100 animate-fade-in">
             <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <div className="w-2 h-2 bg-[#aa60c8] rounded-full"></div>
-              {t("projectDetails")}
+              {translations.projectDetails}
             </h4>
             <p className="text-gray-700 mb-6 leading-relaxed bg-gray-50 p-4 rounded-xl">
               {project.description}
@@ -106,7 +116,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <div className="mb-6">
               <h5 className="font-medium text-gray-900 mb-3 flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-[#ca80e8] rounded-full"></div>
-                {t("technologiesUsed")}
+                {translations.technologiesUsed}
               </h5>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
@@ -132,7 +142,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gray-900 to-black text-white rounded-xl hover:shadow-lg hover:shadow-gray-900/30 transition-all duration-300 transform hover:-translate-y-1"
             >
               <Github className="w-4 h-4" />
-              <span className="font-semibold">{t("code")}</span>
+              <span className="font-semibold">{translations.code}</span>
             </a>
             <a
               href={project.demoUrl}
@@ -141,7 +151,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#aa60c8] to-[#8a40a8] text-white rounded-xl hover:shadow-lg hover:shadow-[#aa60c8]/30 transition-all duration-300 transform hover:-translate-y-1"
             >
               <ExternalLink className="w-4 h-4" />
-              <span className="font-semibold">{t("demo")}</span>
+              <span className="font-semibold">{translations.demo}</span>
             </a>
           </div>
           
@@ -151,12 +161,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             {isExpanded ? (
               <>
-                {t("viewLess")}
+                {translations.viewLess}
                 <ChevronUp className="w-4 h-4 group-hover/btn:-translate-y-0.5 transition-transform" />
               </>
             ) : (
               <>
-                {t("viewDetails")}
+                {translations.viewDetails}
                 <ChevronDown className="w-4 h-4 group-hover/btn:translate-y-0.5 transition-transform" />
               </>
             )}

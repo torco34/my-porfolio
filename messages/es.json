@@ -160,6 +160,32 @@
       "tools": "Herramientas",
       "softSkills": "Habilidades Blandas"
     },
+    "skills": {
+      "stats": {
+        "title": "Estadísticas de Habilidades",
+        "total": "Total",
+        "advanced": "Avanzadas",
+        "intermediate": "Intermedias",
+        "basic": "Básicas"
+      },
+      "categories": {
+        "title": "Distribución por Categoría",
+        "frontend": "Frontend",
+        "tools": "Herramientas",
+        "soft": "Habilidades Blandas"
+      },
+      "levels": {
+        "advanced": "Habilidades Avanzadas",
+        "intermediate": "Habilidades Intermedias",
+        "basic": "Habilidades Básicas"
+      },
+      "summary": {
+        "title": "Resumen por Categoría",
+        "frontend": "Especializado en tecnologías modernas como React, Next.js y TypeScript para crear interfaces de usuario excepcionales.",
+        "tools": "Dominio de herramientas de desarrollo, control de versiones y entornos de trabajo para optimizar el flujo de desarrollo.",
+        "soft": "Habilidades interpersonales y de gestión que facilitan la colaboración efectiva en equipos y proyectos."
+      }
+    },
     "cta": {
       "title": "¿Listo para trabajar juntos?",
       "description": "Si estás buscando un desarrollador frontend comprometido y apasionado por crear experiencias digitales excepcionales, ¡hablemos!",
