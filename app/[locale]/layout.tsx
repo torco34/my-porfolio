@@ -17,26 +17,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Torcoroma Arias | Desarrollador Frontend",
-//   description:
-//     "Portafolio profesional de Torcoroma Arias - Desarrollador Frontend especializado en React, Next.js y TypeScript",
-//   keywords: [
-//     "desarrollador frontend",
-//     "React",
-//     "Next.js",
-//     "TypeScript",
-//     "WordPress",
-//     "portafolio",
-//   ],
-//   authors: [{ name: "Torcoroma Arias" }],
-//   openGraph: {
-//     title: "Torcoroma Arias | Desarrollador Frontend",
-//     description: "Portafolio profesional - Experto en desarrollo web moderno",
-//     type: "website",
-//   },
-// };
-
 export default async function RootLayout({
   children,
   params,
@@ -46,6 +26,10 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   const messages = await getMessages();
+  
+  // Debug: log locale and messages
+  console.log('Current locale:', locale);
+  console.log('Messages loaded:', Object.keys(messages).length > 0);
 
   return (
     <html lang={locale}>
@@ -54,7 +38,7 @@ export default async function RootLayout({
           <div className="min-h-screen flex flex-col">
             <Header />
 
-            <main className="flex-1 p-6 bg-gray-50">
+            <main className="flex-1 p-6 ">
               <div className="max-w-7xl mx-auto">{children}</div>
             </main>
 

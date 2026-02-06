@@ -191,6 +191,23 @@
       "description": "Si estás buscando un desarrollador frontend comprometido y apasionado por crear experiencias digitales excepcionales, ¡hablemos!",
       "contactNow": "Contactar Ahora",
       "viewProjects": "Ver Mis Proyectos"
+    },
+    "controlBar": {
+      "exploring": "Explorando",
+      "profile": "mi perfil profesional",
+      "experiences": "experiencias",
+      "skills": "habilidades",
+      "certifications": "certificaciones",
+      "tabs": {
+        "about": "Sobre mí",
+        "aboutShort": "Sobre",
+        "experience": "Experiencia",
+        "experienceShort": "Exp",
+        "skills": "Habilidades",
+        "skillsShort": "Skills",
+        "education": "Educación",
+        "educationShort": "Edu"
+      }
     }
   }
 }

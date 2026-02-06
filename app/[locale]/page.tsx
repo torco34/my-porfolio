@@ -9,7 +9,7 @@ import Testimonials from "../components/home/Testimonials";
 
 export default function Home({ params }: { params: { locale: string } }) {
   return (
-    <div className="min-h-screen space-y-8">
+    <div className="min-h-screen space-y-8 bg-background-secondary">
       {/* sección de hero img fondo */}
       <HeroHome />
 
