@@ -15,11 +15,13 @@ export default function Sidebar(): JSX.Element {
               src="/img/fotomia.jpg"
               alt="Torcoroma Arias"
               fill
-              className="rounded-full object-cover border-4 border-[#aa60c8] shadow-lg"
+               className="rounded-full object-cover border-4 border-[#aa60c8] shadow-xl shadow-[#aa60c8]/20"
             />
           </div>
           <h2 className="text-xl font-bold text-white">Torcoroma Arias</h2>
-          <p className="text-sm text-[#aa60c8] font-medium mt-1">Frontend Developer</p>
+           <p className="text-sm text-[#aa60c8] font-semibold mt-1 bg-gradient-to-r from-[#aa60c8] to-[#ca80e8] bg-clip-text text-transparent">
+              Frontend Developer
+            </p>
           <p className="text-xs text-gray-400 mt-2 text-center">
             React • Next.js • TypeScript
           </p>

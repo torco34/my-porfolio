@@ -27,7 +27,7 @@ export default function Slider({ slides }: SliderComponentProps) {
   return (
     <div className="w-full">
       <div className="rounded-2xl overflow-hidden relative">
-        <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-[#aa60c8]/90 to-purple-600/30 rounded-full blur-2xl"></div>
+         <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-[#aa60c8]/90 to-[#8a40a8]/30 rounded-full blur-2xl"></div>
         {/* <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-linear-to-r from-purple-700/30 to-purple-900/30 rounded-full blur-2xl"></div> */}
         {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-purple-900/10 rounded-full blur-3xl"></div> */}
 
@@ -45,7 +45,7 @@ export default function Slider({ slides }: SliderComponentProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <div className=" from-black/90  backdrop-blur-md rounded-2xl p-5   shadow-2xl transform transition-all relative overflow-hidden">
-               <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-purple-900/30"></div>
+               <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-[#8a40a8]/30"></div>
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
@@ -78,14 +78,14 @@ export default function Slider({ slides }: SliderComponentProps) {
                       onClick={() => setCurrent(index)}
                       className={`w-3 h-3 rounded-full transition-all duration-300 ${
                          index === current ?
-                           "bg-gradient-to-r from-[#aa60c8] to-purple-600 scale-125 shadow-lg ring-2 ring-purple-300 ring-offset-1 ring-offset-gray-900"
-                        : "bg-purple-500/60 hover:bg-purple-400 hover:scale-110"
+                           "bg-gradient-to-r from-[#aa60c8] to-[#8a40a8] scale-125 shadow-lg ring-2 ring-[#ca80e8] ring-offset-1 ring-offset-gray-900"
+                         : "bg-[#aa60c8]/60 hover:bg-[#ca80e8] hover:scale-110"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
                 </div>
-                 <div className="text-sm font-medium text-white bg-gradient-to-r from-[#aa60c8]/80 to-purple-600/80 px-3 py-1 rounded-full border border-purple-500/30">
+                 <div className="text-sm font-medium text-white bg-gradient-to-r from-[#aa60c8]/80 to-[#8a40a8]/80 px-3 py-1 rounded-full border border-[#aa60c8]/30">
                   {current + 1} / {slides.length}
                 </div>
               </div>
@@ -99,10 +99,10 @@ export default function Slider({ slides }: SliderComponentProps) {
               </button>
             </div>
 
-            <div className="text-sm text-purple-700 font-medium animate-pulse flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-600 rounded-full animate-ping"></div>
+             <div className="text-sm text-[#8a40a8] font-medium animate-pulse flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#aa60c8] rounded-full animate-ping"></div>
               ✨ Proyectos destacados
-              <div className="w-2 h-2 bg-purple-400 rounded-full animate-ping animation-delay-300"></div>
+              <div className="w-2 h-2 bg-[#ca80e8] rounded-full animate-ping animation-delay-300"></div>
             </div>
           </div>
         </div>

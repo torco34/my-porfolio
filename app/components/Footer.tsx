@@ -34,7 +34,9 @@ export default function Footer() {
           <div className="space-y-4">
             <div>
               <h2 className="text-2xl font-bold">Torcoroma Arias</h2>
-              <p className="text-[#aa60c8] font-medium">Desarrollador Frontend</p>
+               <p className="text-[#aa60c8] font-semibold bg-gradient-to-r from-[#aa60c8] to-[#ca80e8] bg-clip-text text-transparent">
+                  Desarrollador Frontend
+                </p>
             </div>
             <p className="text-gray-400 text-sm">
               Transformo ideas en experiencias digitales excepcionales con tecnologías modernas y código limpio.
@@ -48,7 +50,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-800 rounded-lg hover:bg-[#aa60c8] transition-colors"
+                     className="p-2.5 bg-gray-800/50 backdrop-blur-sm rounded-xl hover:bg-gradient-to-r hover:from-[#aa60c8] hover:to-[#8a40a8] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-[#aa60c8]/20"
                     aria-label={social.label}
                   >
                     <Icon className="w-5 h-5" />
@@ -62,11 +64,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Navegación</h3>
             <ul className="space-y-2">
-              {navigationLinks.map((link) => (
+               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-[#aa60c8] transition-colors"
+                    className="text-gray-400 hover:text-[#aa60c8] transition-colors hover:translate-x-1 inline-block duration-300"
                   >
                     {link.label}
                   </Link>
@@ -79,11 +81,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Servicios</h3>
             <ul className="space-y-2">
-              {serviceLinks.map((service) => (
+               {serviceLinks.map((service) => (
                 <li key={service.href}>
                   <Link
                     href={service.href}
-                    className="text-gray-400 hover:text-[#aa60c8] transition-colors"
+                    className="text-gray-400 hover:text-[#aa60c8] transition-colors hover:translate-x-1 inline-block duration-300"
                   >
                     {service.label}
                   </Link>
@@ -97,16 +99,16 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#aa60c8] mt-0.5" />
-                <span className="text-gray-400">torcoroma@email.com</span>
+                 <Mail className="w-5 h-5 text-[#aa60c8] mt-0.5" />
+                <span className="text-gray-400 hover:text-gray-300 transition-colors">torcoroma@email.com</span>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#aa60c8] mt-0.5" />
-                <span className="text-gray-400">+57 123 456 7890</span>
+                 <Phone className="w-5 h-5 text-[#aa60c8] mt-0.5" />
+                <span className="text-gray-400 hover:text-gray-300 transition-colors">+57 123 456 7890</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#aa60c8] mt-0.5" />
-                <span className="text-gray-400">Colombia</span>
+                 <MapPin className="w-5 h-5 text-[#aa60c8] mt-0.5" />
+                <span className="text-gray-400 hover:text-gray-300 transition-colors">Colombia</span>
               </li>
             </ul>
             
@@ -117,9 +119,9 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Tu email"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-sm focus:outline-none focus:ring-1 focus:ring-[#aa60c8]"
+                   className="flex-1 px-3 py-2.5 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-l-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#aa60c8] focus:border-transparent"
                 />
-                <button className="px-4 py-2 bg-[#aa60c8] text-white rounded-r-lg hover:bg-[#9a50b8] transition-colors text-sm font-medium">
+                 <button className="px-5 py-2.5 bg-gradient-to-r from-[#aa60c8] to-[#8a40a8] text-white rounded-r-xl hover:shadow-lg hover:shadow-[#aa60c8]/30 transition-all duration-300 text-sm font-semibold">
                   Enviar
                 </button>
               </div>
