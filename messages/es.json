@@ -209,5 +209,96 @@
         "educationShort": "Edu"
       }
     }
+  },
+  "Experience": {
+    "hero": {
+      "title": "Mi Experiencia Profesional",
+      "subtitle": "Desarrollador Frontend con 3+ años de experiencia",
+      "description": "He trabajado en diversos proyectos que me han permitido desarrollar habilidades técnicas y blandas, siempre enfocado en entregar soluciones de alta calidad.",
+      "location": "Bogotá, Colombia & Remoto",
+      "stats": {
+        "years": "Años Experiencia",
+        "projects": "Proyectos",
+        "achievements": "Logros",
+        "skills": "Habilidades"
+      }
+    },
+    "controlBar": {
+      "showing": "Mostrando",
+      "experiences": "experiencias",
+      "filters": {
+        "title": "Filtros",
+        "experienceType": "Tipo de Experiencia",
+        "all": "Todos",
+        "professional": "Profesional",
+        "freelance": "Freelance"
+      },
+      "sort": {
+        "title": "Ordenar por",
+        "date": "Fecha",
+        "relevance": "Relevancia"
+      },
+      "dataSource": {
+        "title": "Fuente de Datos",
+        "static": "Datos Estáticos (TypeScript)",
+        "dynamic": "Datos Dinámicos (JSON)"
+      },
+      "summary": {
+        "title": "Resumen",
+        "experiencesShown": "Experiencias mostradas",
+        "activeFilter": "Filtro activo",
+        "source": "Fuente"
+      }
+    },
+    "content": {
+      "types": {
+        "professional": "Profesional",
+        "freelance": "Freelance",
+        "education": "Educación"
+      },
+      "achievements": "Logros Principales",
+      "impact": "Impacto",
+      "projectsCount": "Proyectos Realizados",
+      "projects": "proyectos",
+      "expand": "Expandir",
+      "collapse": "Contraer"
+    },
+    "cta": {
+      "title": "¿Interesado en trabajar conmigo?",
+      "description": "Si buscas un desarrollador frontend con experiencia comprobada y pasión por crear soluciones innovadoras, ¡contáctame!",
+      "contactNow": "Contactar Ahora",
+      "viewProjects": "Ver Proyectos"
+    },
+    "timeline": {
+      "title": "Línea de Tiempo",
+      "description": "Explora mi trayectoria profesional organizada cronológicamente",
+      "legend": {
+        "title": "Leyenda de la Línea de Tiempo",
+        "professionalDescription": "Trabajo en empresas",
+        "freelanceDescription": "Proyectos independientes",
+        "educationDescription": "Aprendizaje y enseñanza"
+      }
+    },
+    "noResults": {
+      "title": "No se encontraron experiencias",
+      "description": "Intenta ajustar los filtros para ver más resultados"
+    },
+    "card": {
+      "showLess": "Mostrar menos",
+      "showMore": "Ver más detalles",
+      "experienceDetails": "Detalles de la Experiencia",
+      "skillsApplied": "Habilidades Aplicadas",
+      "location": "Ubicación",
+      "period": "Período",
+      "projectsCount": "proyectos",
+      "viewLess": "Ver menos",
+      "viewDetails": "Ver detalles",
+      "more": "más",
+      "achievements": "Logros",
+      "impactGenerated": "Impacto Generado",
+      "projectsSummary": "Resumen de Proyectos",
+      "completedProjects": "Proyectos completados",
+      "viewRelatedProjects": "Ver proyectos relacionados"
+    }
   }
 }

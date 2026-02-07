@@ -209,5 +209,96 @@
         "educationShort": "Edu"
       }
     }
+  },
+  "Experience": {
+    "hero": {
+      "title": "My Professional Experience",
+      "subtitle": "Frontend Developer with 3+ years of experience",
+      "description": "I have worked on various projects that have allowed me to develop technical and soft skills, always focused on delivering high-quality solutions.",
+      "location": "Bogotá, Colombia & Remote",
+      "stats": {
+        "years": "Years Experience",
+        "projects": "Projects",
+        "achievements": "Achievements",
+        "skills": "Skills"
+      }
+    },
+    "controlBar": {
+      "showing": "Showing",
+      "experiences": "experiences",
+      "filters": {
+        "title": "Filters",
+        "experienceType": "Experience Type",
+        "all": "All",
+        "professional": "Professional",
+        "freelance": "Freelance"
+      },
+      "sort": {
+        "title": "Sort by",
+        "date": "Date",
+        "relevance": "Relevance"
+      },
+      "dataSource": {
+        "title": "Data Source",
+        "static": "Static Data (TypeScript)",
+        "dynamic": "Dynamic Data (JSON)"
+      },
+      "summary": {
+        "title": "Summary",
+        "experiencesShown": "Experiences shown",
+        "activeFilter": "Active filter",
+        "source": "Source"
+      }
+    },
+    "content": {
+      "types": {
+        "professional": "Professional",
+        "freelance": "Freelance",
+        "education": "Education"
+      },
+      "achievements": "Main Achievements",
+      "impact": "Impact",
+      "projectsCount": "Projects Completed",
+      "projects": "projects",
+      "expand": "Expand",
+      "collapse": "Collapse"
+    },
+    "cta": {
+      "title": "Interested in working with me?",
+      "description": "If you're looking for a frontend developer with proven experience and passion for creating innovative solutions, contact me!",
+      "contactNow": "Contact Now",
+      "viewProjects": "View Projects"
+    },
+    "timeline": {
+      "title": "Timeline",
+      "description": "Explore my professional journey organized chronologically",
+      "legend": {
+        "title": "Timeline Legend",
+        "professionalDescription": "Work in companies",
+        "freelanceDescription": "Independent projects",
+        "educationDescription": "Learning and teaching"
+      }
+    },
+    "noResults": {
+      "title": "No experiences found",
+      "description": "Try adjusting the filters to see more results"
+    },
+    "card": {
+      "showLess": "Show less",
+      "showMore": "Show more details",
+      "experienceDetails": "Experience Details",
+      "skillsApplied": "Skills Applied",
+      "location": "Location",
+      "period": "Period",
+      "projectsCount": "projects",
+      "viewLess": "View less",
+      "viewDetails": "View details",
+      "more": "more",
+      "achievements": "Achievements",
+      "impactGenerated": "Impact Generated",
+      "projectsSummary": "Projects Summary",
+      "completedProjects": "Completed projects",
+      "viewRelatedProjects": "View related projects"
+    }
   }
 }

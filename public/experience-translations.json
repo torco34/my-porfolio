@@ -1,0 +1,222 @@
+{
+  "es": {
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Desarrollador Web Front-End",
+        "company": "Empresa Intuition Business",
+        "period": "2025 - Presente",
+        "description": "Formo parte de esta empresa, donde adquirí experiencia trabajando con WordPress y desarrollando proyectos con Next.js.",
+        "type": "professional",
+        "location": "Bogotá, Colombia",
+        "achievements": [
+          "Desarrollo de 5+ proyectos con WordPress y Next.js",
+          "Optimización de performance en 40%",
+          "Implementación de mejores prácticas de SEO"
+        ],
+        "impact": "Contribución significativa al crecimiento de la empresa mediante desarrollo de soluciones escalables",
+        "projectsCount": 8,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind",
+          "WordPress"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Desarrollador Web Front-End",
+        "company": "Freelance Projects",
+        "period": "2025 - Presente",
+        "description": "He trabajado en proyectos reales con dos compañeros lo cual agrega experiencia valiosa en colaboración y desarrollo de soluciones personalizadas.",
+        "type": "freelance",
+        "location": "Remoto",
+        "achievements": [
+          "Completados 12+ proyectos freelance",
+          "Satisfacción del cliente del 95%",
+          "Desarrollo de soluciones personalizadas"
+        ],
+        "impact": "Entrega de proyectos de alta calidad que superan expectativas del cliente",
+        "projectsCount": 12,
+        "skills": [
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Git"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Mentor de Desarrollo Frontend",
+        "company": "Comunidad Tech",
+        "period": "2024 - Presente",
+        "description": "Mentoría a desarrolladores junior y estudiantes, compartiendo conocimientos y mejores prácticas en desarrollo frontend moderno.",
+        "type": "education",
+        "location": "Online",
+        "achievements": [
+          "Mentoría a 15+ desarrolladores",
+          "Creación de material educativo",
+          "Talleres y workshops online"
+        ],
+        "impact": "Contribución al crecimiento de la comunidad tech local",
+        "projectsCount": 5,
+        "skills": [
+          "React",
+          "TypeScript",
+          "Mentoría",
+          "Comunicación"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Contribuidor Open Source",
+        "company": "Proyectos Open Source",
+        "period": "2023 - Presente",
+        "description": "Contribuciones activas a proyectos open source relacionados con React y herramientas de desarrollo frontend.",
+        "type": "professional",
+        "location": "Global",
+        "achievements": [
+          "50+ contribuciones aceptadas",
+          "Mantenimiento de librerías",
+          "Reporte y fix de bugs"
+        ],
+        "impact": "Mejora de herramientas utilizadas por miles de desarrolladores",
+        "projectsCount": 20,
+        "skills": [
+          "Git",
+          "Open Source",
+          "Code Review",
+          "Documentación"
+        ]
+      }
+    ],
+    "translations": {
+      "showLess": "Mostrar menos",
+      "showMore": "Ver más detalles",
+      "experienceDetails": "Detalles de la Experiencia",
+      "skillsApplied": "Habilidades Aplicadas",
+      "location": "Ubicación",
+      "period": "Período",
+      "projectsCount": "proyectos",
+      "viewLess": "Ver menos",
+      "viewDetails": "Ver detalles",
+      "more": "más",
+      "achievements": "Logros",
+      "impactGenerated": "Impacto Generado",
+      "projectsSummary": "Resumen de Proyectos",
+      "completedProjects": "Proyectos completados",
+      "viewRelatedProjects": "Ver proyectos relacionados"
+    }
+  },
+  "en": {
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Front-End Web Developer",
+        "company": "Intuition Business Company",
+        "period": "2025 - Present",
+        "description": "I am part of this company, where I gained experience working with WordPress and developing projects with Next.js.",
+        "type": "professional",
+        "location": "Bogotá, Colombia",
+        "achievements": [
+          "Development of 5+ projects with WordPress and Next.js",
+          "Performance optimization by 40%",
+          "Implementation of SEO best practices"
+        ],
+        "impact": "Significant contribution to company growth through development of scalable solutions",
+        "projectsCount": 8,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind",
+          "WordPress"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Front-End Web Developer",
+        "company": "Freelance Projects",
+        "period": "2025 - Present",
+        "description": "I have worked on real projects with two colleagues, which adds valuable experience in collaboration and development of customized solutions.",
+        "type": "freelance",
+        "location": "Remote",
+        "achievements": [
+          "Completed 12+ freelance projects",
+          "95% client satisfaction",
+          "Development of customized solutions"
+        ],
+        "impact": "Delivery of high-quality projects that exceed client expectations",
+        "projectsCount": 12,
+        "skills": [
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Git"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Frontend Development Mentor",
+        "company": "Tech Community",
+        "period": "2024 - Present",
+        "description": "Mentoring junior developers and students, sharing knowledge and best practices in modern frontend development.",
+        "type": "education",
+        "location": "Online",
+        "achievements": [
+          "Mentored 15+ developers",
+          "Creation of educational material",
+          "Online workshops and training"
+        ],
+        "impact": "Contribution to the growth of the local tech community",
+        "projectsCount": 5,
+        "skills": [
+          "React",
+          "TypeScript",
+          "Mentoring",
+          "Communication"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Open Source Contributor",
+        "company": "Open Source Projects",
+        "period": "2023 - Present",
+        "description": "Active contributions to open source projects related to React and frontend development tools.",
+        "type": "professional",
+        "location": "Global",
+        "achievements": [
+          "50+ accepted contributions",
+          "Library maintenance",
+          "Bug reporting and fixing"
+        ],
+        "impact": "Improvement of tools used by thousands of developers",
+        "projectsCount": 20,
+        "skills": [
+          "Git",
+          "Open Source",
+          "Code Review",
+          "Documentation"
+        ]
+      }
+    ],
+    "translations": {
+      "showLess": "Show less",
+      "showMore": "View more details",
+      "experienceDetails": "Experience Details",
+      "skillsApplied": "Skills Applied",
+      "location": "Location",
+      "period": "Period",
+      "projectsCount": "projects",
+      "viewLess": "View less",
+      "viewDetails": "View details",
+      "more": "more",
+      "achievements": "Achievements",
+      "impactGenerated": "Impact Generated",
+      "projectsSummary": "Projects Summary",
+      "completedProjects": "Completed projects",
+      "viewRelatedProjects": "View related projects"
+    }
+  }
+}
