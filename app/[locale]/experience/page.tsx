@@ -1,9 +1,8 @@
 "use client";
 
 import {
-  ExperienceContent,
   ExperienceFilters,
-  ExperienceHero,
+  ExperienceSection,
   ExperienceStats,
 } from "@/app/components/experience";
 import { useExperienceFilters } from "@/app/hooks/useExperienceFilters";
@@ -17,17 +16,15 @@ export default function ExperiencePage({
   params: Promise<{ locale: string }>;
 }) {
   const [filterType, setFilterType] = useState<string>("all");
-  const [sortBy, setSortBy] = useState<"date" | "relevance">("date");
-  const [useJSON, setUseJSON] = useState(false);
 
   const { locale } = use(params);
   const translations = useExperienceTranslations();
-  const filteredExperiences = useExperienceFilters(filterType, sortBy);
+  const filteredExperiences = useExperienceFilters(filterType, "date");
   const stats = useExperienceStats();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <ExperienceHero />
+    <div className="min-h-screen bg-linear-to-b ">
+      {/* <ExperienceHero /> */}
       <ExperienceStats stats={stats} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -35,20 +32,16 @@ export default function ExperiencePage({
           <div className="lg:w-1/4">
             <ExperienceFilters
               filterType={filterType}
-              sortBy={sortBy}
-              useJSON={useJSON}
               filteredExperiences={filteredExperiences}
               onFilterChange={setFilterType}
-              onSortChange={setSortBy}
-              onDataSourceChange={setUseJSON}
             />
           </div>
 
-          <ExperienceContent
-            useJSON={useJSON}
+          <ExperienceSection experiences={filteredExperiences} />
+          {/* <ExperienceContent
             filteredExperiences={filteredExperiences}
             locale={locale}
-          />
+          /> */}
         </div>
       </div>
     </div>

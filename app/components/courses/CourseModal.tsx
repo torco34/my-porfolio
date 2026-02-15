@@ -46,24 +46,64 @@ export default function CourseModal({ course, isOpen, onClose }: CourseModalProp
 
   if (!course || !isOpen) return null;
 
-  const getLevelColor = (level?: string) => {
-    switch (level) {
-      case "beginner": return "bg-green-100 text-green-700 border-green-200";
-      case "intermediate": return "bg-blue-100 text-blue-700 border-blue-200";
-      case "advanced": return "bg-purple-100 text-purple-700 border-purple-200";
-      default: return "bg-gray-100 text-gray-700 border-gray-200";
+  const levelConfig = {
+    beginner: {
+      color: "bg-green-100 text-green-700 border-green-200",
+      label: "Principiante"
+    },
+    intermediate: {
+      color: "bg-blue-100 text-blue-700 border-blue-200",
+      label: "Intermedio"
+    },
+    advanced: {
+      color: "bg-purple-100 text-purple-700 border-purple-200",
+      label: "Avanzado"
+    },
+    default: {
+      color: "bg-gray-100 text-gray-700 border-gray-200",
+      label: "Nivel"
     }
+  } as const;
+
+  const categoryConfig = {
+    frontend: {
+      color: "bg-blue-50 text-blue-600 border border-blue-200",
+      label: "Frontend"
+    },
+    backend: {
+      color: "bg-green-50 text-green-600 border border-green-200",
+      label: "Backend"
+    },
+    devops: {
+      color: "bg-orange-50 text-orange-600 border border-orange-200",
+      label: "DevOps"
+    },
+    tools: {
+      color: "bg-purple-50 text-purple-600 border border-purple-200",
+      label: "Herramientas"
+    },
+    ux: {
+      color: "bg-pink-50 text-pink-600 border border-pink-200",
+      label: "UX/UI"
+    },
+    default: {
+      color: "bg-gray-50 text-gray-600 border border-gray-200",
+      label: "Categoría"
+    }
+  } as const;
+
+  const getLevelConfig = (level?: string) => {
+    if (level && level in levelConfig) {
+      return levelConfig[level as keyof typeof levelConfig];
+    }
+    return levelConfig.default;
   };
 
-  const getCategoryColor = (category?: string) => {
-    switch (category) {
-      case "frontend": return "bg-blue-50 text-blue-600 border border-blue-200";
-      case "backend": return "bg-green-50 text-green-600 border border-green-200";
-      case "devops": return "bg-orange-50 text-orange-600 border border-orange-200";
-      case "tools": return "bg-purple-50 text-purple-600 border border-purple-200";
-      case "ux": return "bg-pink-50 text-pink-600 border border-pink-200";
-      default: return "bg-gray-50 text-gray-600 border border-gray-200";
+  const getCategoryConfig = (category?: string) => {
+    if (category && category in categoryConfig) {
+      return categoryConfig[category as keyof typeof categoryConfig];
     }
+    return categoryConfig.default;
   };
 
   const getProgressColor = (progress?: number) => {
@@ -105,21 +145,17 @@ export default function CourseModal({ course, isOpen, onClose }: CourseModalProp
             <div className="flex justify-between items-start">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
-                  {course.level && (
-                    <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold border ${getLevelColor(course.level)}`}>
-                      <TrendingUp className="w-4 h-4" />
-                      {course.level === "beginner" ? "Principiante" : 
-                       course.level === "intermediate" ? "Intermedio" : "Avanzado"}
-                    </span>
-                  )}
-                  {course.category && (
-                    <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(course.category)}`}>
-                      {course.category === "frontend" ? "Frontend" :
-                       course.category === "backend" ? "Backend" :
-                       course.category === "devops" ? "DevOps" :
-                       course.category === "tools" ? "Herramientas" : "UX/UI"}
-                    </span>
-                  )}
+                   {course.level && (
+                     <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold border ${getLevelConfig(course.level).color}`}>
+                       <TrendingUp className="w-4 h-4" />
+                       {getLevelConfig(course.level).label}
+                     </span>
+                   )}
+                   {course.category && (
+                     <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${getCategoryConfig(course.category).color}`}>
+                       {getCategoryConfig(course.category).label}
+                     </span>
+                   )}
                 </div>
                 <h2 className="text-2xl font-bold mb-2">{course.title}</h2>
                 <div className="flex items-center gap-4 text-blue-100">

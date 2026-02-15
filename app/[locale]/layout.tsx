@@ -26,14 +26,14 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   const messages = await getMessages();
-  
+
   // Debug: log locale and messages
-  console.log('Current locale:', locale);
-  console.log('Messages loaded:', Object.keys(messages).length > 0);
+  console.log("Current locale:", locale);
+  console.log("Messages loaded:", Object.keys(messages).length > 0);
 
   return (
     <html lang={locale}>
-      <body className="bg-gray-50">
+      <body className="bg-white">
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen flex flex-col">
             <Header />

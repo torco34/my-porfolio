@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import { experiencia, type Experience as DataExperience } from "@/app/data/dataExperience";
+import { experiencia } from "@/app/data/dataExperience";
+import { type Experience as DataExperience } from "@/app/ts/experiences";
 
 export function useExperienceFilters(
   filterType: string,

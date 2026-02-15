@@ -213,11 +213,11 @@
   "Experience": {
     "hero": {
       "title": "Mi Experiencia Profesional",
-      "subtitle": "Desarrollador Frontend con 3+ años de experiencia",
+      "subtitle": "Desarrollador Frontend con 2+ años de experiencia",
       "description": "He trabajado en diversos proyectos que me han permitido desarrollar habilidades técnicas y blandas, siempre enfocado en entregar soluciones de alta calidad.",
       "location": "Bogotá, Colombia & Remoto",
       "stats": {
-        "years": "Años Experiencia",
+        "years": "Años Experiencia ",
         "projects": "Proyectos",
         "achievements": "Logros",
         "skills": "Habilidades"

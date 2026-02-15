@@ -22,24 +22,64 @@ interface CourseCardProps {
 export default function CourseCard({ course, onViewDetails }: CourseCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const getLevelColor = (level?: string) => {
-    switch (level) {
-      case "beginner": return "bg-green-100 text-green-700 border-green-200";
-      case "intermediate": return "bg-blue-100 text-blue-700 border-blue-200";
-      case "advanced": return "bg-purple-100 text-purple-700 border-purple-200";
-      default: return "bg-gray-100 text-gray-700 border-gray-200";
+  const levelConfig = {
+    beginner: {
+      color: "bg-green-100 text-green-700 border-green-200",
+      label: "Principiante"
+    },
+    intermediate: {
+      color: "bg-blue-100 text-blue-700 border-blue-200",
+      label: "Intermedio"
+    },
+    advanced: {
+      color: "bg-purple-100 text-purple-700 border-purple-200",
+      label: "Avanzado"
+    },
+    default: {
+      color: "bg-gray-100 text-gray-700 border-gray-200",
+      label: "Nivel"
     }
+  } as const;
+
+  const categoryConfig = {
+    frontend: {
+      color: "bg-blue-50 text-blue-600",
+      label: "Frontend"
+    },
+    backend: {
+      color: "bg-green-50 text-green-600",
+      label: "Backend"
+    },
+    devops: {
+      color: "bg-orange-50 text-orange-600",
+      label: "DevOps"
+    },
+    tools: {
+      color: "bg-purple-50 text-purple-600",
+      label: "Herramientas"
+    },
+    ux: {
+      color: "bg-pink-50 text-pink-600",
+      label: "UX/UI"
+    },
+    default: {
+      color: "bg-gray-50 text-gray-600",
+      label: "Categoría"
+    }
+  } as const;
+
+  const getLevelConfig = (level?: string) => {
+    if (level && level in levelConfig) {
+      return levelConfig[level as keyof typeof levelConfig];
+    }
+    return levelConfig.default;
   };
 
-  const getCategoryColor = (category?: string) => {
-    switch (category) {
-      case "frontend": return "bg-blue-50 text-blue-600";
-      case "backend": return "bg-green-50 text-green-600";
-      case "devops": return "bg-orange-50 text-orange-600";
-      case "tools": return "bg-purple-50 text-purple-600";
-      case "ux": return "bg-pink-50 text-pink-600";
-      default: return "bg-gray-50 text-gray-600";
+  const getCategoryConfig = (category?: string) => {
+    if (category && category in categoryConfig) {
+      return categoryConfig[category as keyof typeof categoryConfig];
     }
+    return categoryConfig.default;
   };
 
   const getProgressColor = (progress?: number) => {
@@ -82,13 +122,12 @@ export default function CourseCard({ course, onViewDetails }: CourseCardProps) {
 
         {/* Level Badge */}
         {course.level && (
-          <div className="absolute bottom-4 left-4">
-            <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold border ${getLevelColor(course.level)}`}>
-              <TrendingUp className="w-3 h-3" />
-              {course.level === "beginner" ? "Principiante" : 
-               course.level === "intermediate" ? "Intermedio" : "Avanzado"}
-            </span>
-          </div>
+           <div className="absolute bottom-4 left-4">
+             <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold border ${getLevelConfig(course.level).color}`}>
+               <TrendingUp className="w-3 h-3" />
+               {getLevelConfig(course.level).label}
+             </span>
+           </div>
         )}
       </div>
 
@@ -113,14 +152,11 @@ export default function CourseCard({ course, onViewDetails }: CourseCardProps) {
 
         {/* Category */}
         {course.category && (
-          <div className="mb-4">
-            <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(course.category)}`}>
-              {course.category === "frontend" ? "Frontend" :
-               course.category === "backend" ? "Backend" :
-               course.category === "devops" ? "DevOps" :
-               course.category === "tools" ? "Herramientas" : "UX/UI"}
-            </span>
-          </div>
+           <div className="mb-4">
+             <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${getCategoryConfig(course.category).color}`}>
+               {getCategoryConfig(course.category).label}
+             </span>
+           </div>
         )}
 
         {/* Technologies */}

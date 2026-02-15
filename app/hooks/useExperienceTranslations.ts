@@ -6,8 +6,6 @@ export function useExperienceTranslations() {
   return {
     // Hero
     hero: {
-      title: t("hero.title"),
-      subtitle: t("hero.subtitle"),
       stats: {
         years: t("hero.stats.years"),
         projects: t("hero.stats.projects"),

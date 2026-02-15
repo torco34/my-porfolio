@@ -545,7 +545,7 @@ export default function CoursesPage() {
             )}
 
             {/* Call to Action */}
-            <div className="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-center text-white">
+            {/* <div className="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-center text-white">
               <h3 className="text-2xl font-bold mb-4">
                 ¿Interesado en aprender?
               </h3>
@@ -567,7 +567,7 @@ export default function CoursesPage() {
                   Ver Proyectos
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

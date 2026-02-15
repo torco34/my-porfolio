@@ -1,5 +1,3 @@
-import type { ElementType } from "react";
-
 import {
   Atom,
   Braces,
@@ -7,28 +5,11 @@ import {
   FileCode2,
   GitBranch,
   Globe,
-  Wind,
   Users,
+  Wind,
 } from "lucide-react";
 
-export type Skill = {
-  name: string;
-  icon: ElementType;
-};
-
-export type Experience = {
-  id: number;
-  role: string;
-  company: string;
-  period: string;
-  skills: Skill[];
-  description: string;
-  type?: "professional" | "freelance" | "education";
-  location?: string;
-  achievements?: string[];
-  impact?: string;
-  projectsCount?: number;
-};
+import { Experience } from "../ts/experiences";
 
 export const experiencia: Experience[] = [
   {
@@ -45,8 +26,9 @@ export const experiencia: Experience[] = [
       "Optimización de performance en 40%",
       "Implementación de mejores prácticas de SEO",
     ],
-    impact: "Contribución significativa al crecimiento de la empresa mediante desarrollo de soluciones escalables",
-    projectsCount: 8,
+    impact:
+      "Contribución significativa al crecimiento de la empresa mediante desarrollo de soluciones escalables",
+    projectsCount: 5,
     skills: [
       { name: "React", icon: Atom },
       { name: "Next.js", icon: Code },
@@ -65,12 +47,13 @@ export const experiencia: Experience[] = [
     type: "freelance",
     location: "Remoto",
     achievements: [
-      "Completados 12+ proyectos freelance",
+      "Completados 4+ proyectos freelance",
       "Satisfacción del cliente del 95%",
       "Desarrollo de soluciones personalizadas",
     ],
-    impact: "Entrega de proyectos de alta calidad que superan expectativas del cliente",
-    projectsCount: 12,
+    impact:
+      "Entrega de proyectos de alta calidad que superan expectativas del cliente",
+    projectsCount: 4,
     skills: [
       { name: "JavaScript", icon: Braces },
       { name: "HTML", icon: Code },
@@ -80,48 +63,54 @@ export const experiencia: Experience[] = [
   },
   {
     id: 3,
-    role: "Mentor de Desarrollo Frontend",
-    company: "Comunidad Tech",
-    period: "2024 - Presente",
+    role: "Desarrollador Frontend",
+    company: "Bosque Nagal",
+    period: "Jun 2024 - Oct 2024",
     description:
-      "Mentoría a desarrolladores junior y estudiantes, compartiendo conocimientos y mejores prácticas en desarrollo frontend moderno.",
-    type: "education",
-    location: "Online",
+      "Desarrollé y mantuve interfaces web para una aplicación ambiental, aportando mejoras en rendimiento, experiencia de usuario y arquitectura frontend. También brindé mentoría y apoyo técnico a desarrolladores junior y estudiantes.",
+    type: "professional",
+    location: "Bosque Nagal",
     achievements: [
-      "Mentoría a 15+ desarrolladores",
-      "Creación de material educativo",
-      "Talleres y workshops online",
+      "Refactorice y componentice de la interfaz, mejorando la mantenibilidad y escalabilidad del frontend",
+      "Desarrollo de componentes reutilizables (Cards dinámicas) para funcionalidades como sonidos y módulos interactivos",
+      "Mejora del rendimiento de la aplicación en aproximadamente un 20% mediante optimización de renderizado y estructura de componentes",
     ],
-    impact: "Contribución al crecimiento de la comunidad tech local",
-    projectsCount: 5,
+
+    impact:
+      "La componentización del frontend permitió un desarrollo más rápido y mantenible, mientras que las optimizaciones aplicadas mejoraron el rendimiento general de la aplicación en aproximadamente un 20%.",
+
+    projectsCount: 2,
     skills: [
-      { name: "React", icon: Atom },
+      { name: "Vue.js", icon: Atom },
       { name: "TypeScript", icon: FileCode2 },
-      { name: "Mentoría", icon: Users },
-      { name: "Comunicación", icon: Users },
+      { name: "Quasar Framework", icon: Users },
+      { name: "SCRUM", icon: Users },
     ],
   },
+
   {
     id: 4,
-    role: "Contribuidor Open Source",
-    company: "Proyectos Open Source",
-    period: "2023 - Presente",
+    role: "Estudiante / Desarrollador Frontend",
+    company: "TalentLogy",
+    period: "Feb 2023 - Dic 2023",
     description:
-      "Contribuciones activas a proyectos open source relacionados con React y herramientas de desarrollo frontend.",
-    type: "professional",
-    location: "Global",
+      "Formación en desarrollo web frontend, fortaleciendo bases de JavaScript, HTML, CSS y Bootstrap. Participé en un proyecto colaborativo en tiempo real junto a un equipo, aplicando metodologías prácticas y simulando un entorno profesional.",
+    type: "education",
+    location: "Remoto",
     achievements: [
-      "50+ contribuciones aceptadas",
-      "Mantenimiento de librerías",
-      "Reporte y fix de bugs",
+      "Desarrollo de un proyecto colaborativo en equipo aplicando conocimientos en tiempo real",
+      "Implementación de interfaces responsivas utilizando Bootstrap y CSS",
+      "Integración de frontend con backend mediante consumo de APIs y manejo de datos dinámicos",
     ],
-    impact: "Mejora de herramientas utilizadas por miles de desarrolladores",
-    projectsCount: 20,
+    impact:
+      "Consolidé bases sólidas en desarrollo web y experiencia práctica trabajando en equipo, mejorando mi capacidad para construir proyectos reales y colaborar en entornos similares a empresas.",
+    projectsCount: 1,
     skills: [
-      { name: "Git", icon: GitBranch },
-      { name: "Open Source", icon: Code },
-      { name: "Code Review", icon: Code },
-      { name: "Documentación", icon: FileCode2 },
+      { name: "JavaScript", icon: GitBranch },
+      { name: "Bootstrap", icon: Code },
+      { name: "CSS", icon: Code },
+      { name: "Integración Frontend-Backend", icon: FileCode2 },
     ],
   },
 ];
+// data de colores y profeciones
