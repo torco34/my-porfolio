@@ -30,7 +30,7 @@ export default function ExperienceFilters({
               onClick={() => onFilterChange(type)}
               className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                 filterType === type ?
-                  "bg-blue-50 text-blue-700 border border-blue-200"
+                  "bg-[#574964] text-white border border-[#574964]"
                 : "text-gray-700 hover:bg-gray-50"
               }`}
             >
