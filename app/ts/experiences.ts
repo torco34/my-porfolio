@@ -84,3 +84,9 @@ export type skillsProps = {
   showAllSkills: boolean;
   onShowAll: () => void;
 };
+// ExperienceFilters components
+export interface ExperienceFiltersProps {
+  filterType: string;
+  filteredExperiences: unknown[];
+  onFilterChange: (type: string) => void;
+}

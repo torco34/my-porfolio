@@ -1,26 +1,14 @@
 "use client";
 
 import { useExperienceTranslations } from "@/app/hooks/useExperienceTranslations";
-import { Award, Briefcase, Users } from "lucide-react";
-
-interface ExperienceFiltersProps {
-  filterType: string;
-  filteredExperiences: unknown[];
-  onFilterChange: (type: string) => void;
-}
+import { ExperienceFiltersProps } from "@/app/ts/experiences";
+import { typeIconMap } from "./cardComponents/ExperienceTypeConfig";
 
 export default function ExperienceFilters({
   filterType,
-
   onFilterChange,
 }: ExperienceFiltersProps) {
   const translations = useExperienceTranslations();
-  const typeIconMap = {
-    professional: <Briefcase className="w-4 h-4" />,
-    freelance: <Users className="w-4 h-4" />,
-    education: <Award className="w-4 h-4" />,
-    default: <Briefcase className="w-4 h-4" />,
-  } as const;
 
   const getTypeIcon = (type: string) => {
     return typeIconMap[type as keyof typeof typeIconMap] || typeIconMap.default;

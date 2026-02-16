@@ -1,5 +1,6 @@
+import { Award, Briefcase, Code, Users } from "lucide-react";
+
 import { ExperienceTranslations } from "@/app/ts/tipeHook";
-import { Award, Briefcase, Code } from "lucide-react";
 
 export const getExperienceTypeConfig = (translations: ExperienceTranslations) =>
   ({
@@ -24,3 +25,9 @@ export const getExperienceTypeConfig = (translations: ExperienceTranslations) =>
       label: "Experiencia",
     },
   }) as const;
+export const typeIconMap = {
+  professional: <Briefcase className="w-4 h-4" />,
+  freelance: <Users className="w-4 h-4" />,
+  education: <Award className="w-4 h-4" />,
+  default: <Briefcase className="w-4 h-4" />,
+} as const;
