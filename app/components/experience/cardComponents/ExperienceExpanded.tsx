@@ -1,10 +1,12 @@
 import { Award, Target, Zap } from "lucide-react";
 
+import { Experience } from "@/app/ts/experiences";
+import { ExperienceTranslations } from "@/app/ts/tipeHook";
 import { ExperienceSkills } from "./ExperienceSkills";
 
 type Props = {
-  experience: any;
-  translations: any;
+  experience: Experience;
+  translations: ExperienceTranslations;
   isExpanded: boolean;
   showAllSkills: boolean;
   setShowAllSkills: (value: boolean) => void;
@@ -35,14 +37,15 @@ export function ExperienceExpanded({
           />
 
           <div className="space-y-2">
-            {experience.achievements?.length > 0 && (
+            {experience.achievements && experience.achievements.length > 0 && (
               <div>
                 <h5 className="text-sm font-medium text-gray-900 mb-1 flex items-center gap-1">
                   <Award className="w-3 h-3 color-texto" />
                   {translations.content.achievements}
                 </h5>
+
                 <ul className="space-y-1 pl-4">
-                  {experience.achievements.map((a: string, i: number) => (
+                  {experience.achievements.map((a, i) => (
                     <li key={i} className="text-xs text-gray-600">
                       • {a}
                     </li>
@@ -67,6 +70,7 @@ export function ExperienceExpanded({
                   <Target className="w-3 h-3" />
                   {translations.card.projectsSummary}
                 </h5>
+
                 <div className="flex items-center gap-2">
                   <div className="text-lg font-bold text-gray-900">
                     {experience.projectsCount}

@@ -1,13 +1,23 @@
+import React from "react";
+
 import { ChevronDown, ChevronUp } from "lucide-react";
+
+import type { ExperienceTranslations, ExperienceType } from "@/app/ts/tipeHook";
+
+export type ExperienceTypeConfig = {
+  color: string;
+  icon: React.ReactNode;
+  label: string;
+};
 
 type Props = {
   role: string;
   company: string;
-  type?: string;
+  type?: ExperienceType;
   isExpanded: boolean;
   onToggle: () => void;
-  translations: any;
-  getTypeConfig: (type?: string) => any;
+  translations: ExperienceTranslations;
+  getTypeConfig: (type?: ExperienceType) => ExperienceTypeConfig;
 };
 
 export function ExperienceHeader({

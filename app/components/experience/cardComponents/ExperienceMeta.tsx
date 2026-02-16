@@ -1,10 +1,12 @@
 import { Calendar, MapPin, Target } from "lucide-react";
 
+import type { ExperienceTranslations } from "@/app/ts/tipeHook";
+
 type Props = {
   period: string;
   location?: string;
   projectsCount?: number;
-  translations: any;
+  translations: ExperienceTranslations;
 };
 
 export function ExperienceMeta({

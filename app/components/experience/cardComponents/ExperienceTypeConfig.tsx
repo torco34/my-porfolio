@@ -1,6 +1,7 @@
+import { ExperienceTranslations } from "@/app/ts/tipeHook";
 import { Award, Briefcase, Code } from "lucide-react";
 
-export const getExperienceTypeConfig = (translations: any) =>
+export const getExperienceTypeConfig = (translations: ExperienceTranslations) =>
   ({
     professional: {
       color: "badge-professional",

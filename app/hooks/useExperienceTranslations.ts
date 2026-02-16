@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 
-export function useExperienceTranslations() {
+import type { ExperienceTranslations } from "../ts/tipeHook";
+
+export function useExperienceTranslations(): ExperienceTranslations {
   const t = useTranslations("Experience");
 
   return {

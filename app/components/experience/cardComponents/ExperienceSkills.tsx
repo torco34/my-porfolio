@@ -1,10 +1,9 @@
-import React from "react";
-
-type Skill = { icon: React.ElementType; name: string };
+import { Skill } from "@/app/ts/experiences";
+import { ExperienceTranslations } from "@/app/ts/tipeHook";
 
 type Props = {
   skills: Skill[];
-  translations: any;
+  translations: ExperienceTranslations;
   showAllSkills: boolean;
   onShowAll: () => void;
 };
