@@ -1,19 +1,11 @@
-import { Skill } from "@/app/ts/experiences";
-import { ExperienceTranslations } from "@/app/ts/tipeHook";
-
-type Props = {
-  skills: Skill[];
-  translations: ExperienceTranslations;
-  showAllSkills: boolean;
-  onShowAll: () => void;
-};
+import { skillsProps } from "@/app/ts/experiences";
 
 export function ExperienceSkills({
   skills,
   translations,
   showAllSkills,
   onShowAll,
-}: Props) {
+}: skillsProps) {
   const displayedSkills = showAllSkills ? skills : skills.slice(0, 4);
 
   return (

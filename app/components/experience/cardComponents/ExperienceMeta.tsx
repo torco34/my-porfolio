@@ -1,20 +1,13 @@
 import { Calendar, MapPin, Target } from "lucide-react";
 
-import type { ExperienceTranslations } from "@/app/ts/tipeHook";
-
-type Props = {
-  period: string;
-  location?: string;
-  projectsCount?: number;
-  translations: ExperienceTranslations;
-};
+import { metaProps } from "@/app/ts/experiences";
 
 export function ExperienceMeta({
   period,
   location,
   projectsCount,
   translations,
-}: Props) {
+}: metaProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
       <div className="flex items-center gap-2 text-sm text-gray-600">

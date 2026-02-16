@@ -1,4 +1,6 @@
 import type { ElementType } from "react";
+
+import { ExperienceTranslations, ExperienceType } from "./tipeHook";
 // experiencia hero habilidades
 export interface ExperienceStatsProps {
   stats: {
@@ -40,4 +42,45 @@ export interface ExperienceCardProps {
     projectsCount?: number;
   };
 }
-// experience components
+// ExperienceExpanded components
+export type Props = {
+  experience: Experience;
+  translations: ExperienceTranslations;
+  isExpanded: boolean;
+  showAllSkills: boolean;
+  setShowAllSkills: (value: boolean) => void;
+};
+
+// ExperienceHeader components
+export type ExperienceTypeConfig = {
+  color: string;
+  icon: React.ReactNode;
+  label: string;
+};
+
+export type experienceProps = {
+  role: string;
+  company: string;
+  type?: ExperienceType;
+  isExpanded: boolean;
+  onToggle: () => void;
+  translations: ExperienceTranslations;
+  getTypeConfig: (type?: ExperienceType) => ExperienceTypeConfig;
+};
+
+// ExperienceMeta components
+export type metaProps = {
+  period: string;
+  location?: string;
+  projectsCount?: number;
+  translations: ExperienceTranslations;
+};
+
+// ExperienceSkills components
+
+export type skillsProps = {
+  skills: Skill[];
+  translations: ExperienceTranslations;
+  showAllSkills: boolean;
+  onShowAll: () => void;
+};

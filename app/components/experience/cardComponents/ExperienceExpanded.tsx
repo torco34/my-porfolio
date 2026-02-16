@@ -1,16 +1,6 @@
+import { Props } from "@/app/ts/experiences";
 import { Award, Target, Zap } from "lucide-react";
-
-import { Experience } from "@/app/ts/experiences";
-import { ExperienceTranslations } from "@/app/ts/tipeHook";
 import { ExperienceSkills } from "./ExperienceSkills";
-
-type Props = {
-  experience: Experience;
-  translations: ExperienceTranslations;
-  isExpanded: boolean;
-  showAllSkills: boolean;
-  setShowAllSkills: (value: boolean) => void;
-};
 
 export function ExperienceExpanded({
   experience,

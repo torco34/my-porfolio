@@ -1,24 +1,6 @@
-import React from "react";
-
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-import type { ExperienceTranslations, ExperienceType } from "@/app/ts/tipeHook";
-
-export type ExperienceTypeConfig = {
-  color: string;
-  icon: React.ReactNode;
-  label: string;
-};
-
-type Props = {
-  role: string;
-  company: string;
-  type?: ExperienceType;
-  isExpanded: boolean;
-  onToggle: () => void;
-  translations: ExperienceTranslations;
-  getTypeConfig: (type?: ExperienceType) => ExperienceTypeConfig;
-};
+import { experienceProps } from "@/app/ts/experiences";
 
 export function ExperienceHeader({
   role,
@@ -28,7 +10,7 @@ export function ExperienceHeader({
   onToggle,
   translations,
   getTypeConfig,
-}: Props) {
+}: experienceProps) {
   return (
     <div className="flex justify-between items-start">
       <div>
