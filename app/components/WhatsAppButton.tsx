@@ -16,7 +16,6 @@ export default function WhatsAppButton() {
       className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-green-500 px-3 py-3 text-white shadow-lg hover:bg-green-600 transition"
     >
       <FaWhatsapp className="text-2xl" />
-      {/* <span className="hidden sm:block font-medium">WhatsApp</span> */}
     </a>
   );
 }

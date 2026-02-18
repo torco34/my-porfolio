@@ -58,8 +58,8 @@ export const personalInfo: PersonalInfo = {
   title: "Desarrollador Frontend",
   location: "Colombia",
   email: "torcoromaarias@mail.com",
-  experience: "3+ años de experiencia",
-  bio: "Apasionado desarrollador frontend con más de 3 años de experiencia creando interfaces modernas y responsivas. Especializado en React, Next.js y TypeScript, me enfoco en entregar experiencias de usuario excepcionales y código de alta calidad.",
+  experience: "2+ años de experiencia",
+  bio: "Apasionado desarrollador frontend con más de 2 años de experiencia creando interfaces modernas y responsivas. Especializado en React, Next.js y TypeScript, me enfoco en entregar experiencias de usuario excepcionales y código de alta calidad.",
   about:
     "Mi pasión por la tecnología comenzó desde muy joven, y he dedicado mi carrera a dominar las mejores prácticas del desarrollo web moderno. Creo en el aprendizaje continuo y en mantenerme actualizado con las últimas tendencias tecnológicas.",
   philosophy:
@@ -69,41 +69,44 @@ export const personalInfo: PersonalInfo = {
 export const experience: ExperienceItem[] = [
   {
     id: 1,
-    title: "Desarrollador Frontend Senior",
-    company: "Tech Solutions Inc.",
-    period: "2022 - Presente",
+    title: "Desarrollador Frontend",
+    company: "Freelancer",
+    period: "2025 - Presente",
     description:
-      "Lidero el desarrollo de aplicaciones web con React y Next.js, implementando mejores prácticas y mentorizando a desarrolladores junior.",
+      "He trabajado con React y WordPress desarrollando maquetas y proyectos funcionales, participando en el desarrollo de aplicaciones web y sitios dinámicos, implementando buenas prácticas y aprendiendo en entornos profesionales.",
     achievements: [
-      "Reducción del tiempo de carga en 40% mediante optimización de código",
-      "Implementación de arquitectura de micro-frontends",
-      "Mentoría a 3 desarrolladores junior",
+      "Creación de maquetas interactivas en React para clientes y proyectos internos",
+      "Desarrollo de sistemas administrables en WordPress para gestión de contenidos",
+      "Colaboración en equipo de empresa para proyectos web completos",
     ],
   },
+
   {
     id: 2,
     title: "Desarrollador Frontend",
-    company: "Digital Agency Co.",
-    period: "2020 - 2022",
+    company: "Intuition Business",
+    period: "2025 - 2026",
     description:
-      "Desarrollo de sitios web y aplicaciones para clientes internacionales, trabajando con equipos multidisciplinarios.",
+      "Trabajé en Intuition Business desarrollando proyectos con Next.js y WordPress, creando sitios web y aplicaciones funcionales, y aprendiendo en un entorno profesional junto a equipos multidisciplinarios.",
     achievements: [
-      "Desarrollo de 15+ proyectos exitosos",
-      "Implementación de diseño responsive",
-      "Integración con APIs REST y GraphQL",
+      "Desarrollo de múltiples proyectos web exitosos con Next.js y WordPress",
+      "Implementación de diseños responsive y experiencias de usuario optimizadas",
+      "Integración de APIs REST y GraphQL para funcionalidades dinámicas",
+      "Colaboración efectiva en equipos multidisciplinarios y aprendizaje continuo",
     ],
   },
+
   {
     id: 3,
     title: "Desarrollador Web Junior",
-    company: "Startup Innovadora",
-    period: "2019 - 2020",
+    company: "Bosque Nagal",
+    period: "2024 - 2024",
     description:
-      "Primera experiencia profesional, enfocada en aprendizaje y crecimiento en desarrollo frontend.",
+      "Trabajé en Bosque Nagal desarrollando componentes reutilizables en Vue, implementando interacción con APIs y participando en proyectos bajo metodología ágil Scrum, adquiriendo experiencia profesional y buenas prácticas de frontend.",
     achievements: [
-      "Aprendizaje de React y TypeScript",
-      "Contribución a proyectos open source",
-      "Certificación en desarrollo web",
+      "Desarrollo de componentes reutilizables en Vue.js para optimizar proyectos",
+      "Implementación de integración con APIs REST para funcionalidades dinámicas",
+      "Participación en sprints Scrum, colaborando en equipos multidisciplinarios",
     ],
   },
 ];
