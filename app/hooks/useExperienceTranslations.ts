@@ -13,8 +13,6 @@ export function useExperienceTranslations(): ExperienceTranslations {
       totalHours: t("courseStats.totalHours"),
       avgProgress: t("courseStats.avgProgress"),
     },
-
-    // Hero
     hero: {
       stats: {
         years: t("hero.stats.years"),
