@@ -1,5 +1,11 @@
 export type ExperienceTranslations = {
-  stats: any;
+  courseStats: {
+    totalCourses: string;
+    completedCourses: string;
+    totalHours: string;
+    avgProgress: string;
+  };
+
   hero: {
     stats: {
       years: string;

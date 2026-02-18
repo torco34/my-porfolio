@@ -211,6 +211,12 @@
     }
   },
   "Experience": {
+    "courseStats": {
+      "totalCourses": "Total Courses",
+      "completedCourses": "Completed Courses",
+      "totalHours": "Total Hours",
+      "avgProgress": "Average Progress"
+    },
     "hero": {
       "title": "My Professional Experience",
       "subtitle": "Frontend Developer with 3+ years of experience",

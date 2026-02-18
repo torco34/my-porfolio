@@ -28,7 +28,7 @@ export default function CourseStats({ stats }: CourseStatsProps) {
     return {
       icon: item.icon,
       value,
-      label: translations.stats[item.labelKey],
+      label: translations.courseStats[item.labelKey],
     };
   });
 

@@ -6,6 +6,14 @@ export function useExperienceTranslations(): ExperienceTranslations {
   const t = useTranslations("Experience");
 
   return {
+    // ✅ Course Stats (para CourseStats.tsx)
+    courseStats: {
+      totalCourses: t("courseStats.totalCourses"),
+      completedCourses: t("courseStats.completedCourses"),
+      totalHours: t("courseStats.totalHours"),
+      avgProgress: t("courseStats.avgProgress"),
+    },
+
     // Hero
     hero: {
       stats: {
