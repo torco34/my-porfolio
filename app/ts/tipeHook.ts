@@ -1,4 +1,5 @@
 export type ExperienceTranslations = {
+  stats: any;
   hero: {
     stats: {
       years: string;

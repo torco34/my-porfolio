@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 type SearchBarProps = {
   onSearch: (value: string) => void;
@@ -26,9 +26,9 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
           onChange={handleChange}
           placeholder={t("placeholder")}
           className="w-full rounded-lg border border-gray-300 bg-white py-2 md:py-2.5 pl-8 md:pl-10 pr-3 md:pr-4 text-sm transition-all outline-none focus:outline-none
-            focus:border-[#aa60c8]
+            focus:border-[#574964]
             focus:ring-2
-            focus:ring-[#aa60c8]/20
+            focus:ring-[#574964]/20
             hover:border-gray-400
           "
         />
