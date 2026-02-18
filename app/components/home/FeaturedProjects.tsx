@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { slides } from "@/app/data/dataperfil";
-import Slider from "../Slider";
+import Slider from "./Slider";
 
 interface FeaturedProjectsProps {
   locale: string;
@@ -17,7 +17,7 @@ export default function FeaturedProjects({ locale }: FeaturedProjectsProps) {
         <h2 className="text-2xl font-bold text-gray-900">{t("title")}</h2>
         <Link
           href="/projects"
-          className="text-[#aa60c8] font-medium hover:underline"
+          className="text-[#574964] font-medium hover:underline"
         >
           {t("viewAll")}
         </Link>
