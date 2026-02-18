@@ -27,7 +27,7 @@ export default function Slider({ slides }: SliderComponentProps) {
   return (
     <div className="w-full">
       <div className="rounded-2xl overflow-hidden relative">
-        <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-[#aa60c8]/90 to-[#8a40a8]/30 rounded-full blur-2xl"></div>
+        <div className="absolute -top-6 -right-6 w-24 h-24 bg-linear-to-r from-[#aa60c8]/90 to-[#8a40a8]/30 rounded-full blur-2xl"></div>
         {/* <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-linear-to-r from-purple-700/30 to-purple-900/30 rounded-full blur-2xl"></div> */}
         {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-purple-900/10 rounded-full blur-3xl"></div> */}
 
@@ -63,7 +63,7 @@ export default function Slider({ slides }: SliderComponentProps) {
             <div className="flex items-center gap-6">
               <button
                 onClick={prevSlide}
-                className="p-3 bg-gradient-to-r from-[#574964] to-[#574964] rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 group"
+                className="p-3 bg-linear-to-r from-[#574964] to-[#574964] rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 group"
                 aria-label="Previous slide"
               >
                 <ChevronLeft className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
@@ -77,14 +77,14 @@ export default function Slider({ slides }: SliderComponentProps) {
                       onClick={() => setCurrent(index)}
                       className={`w-3 h-3 rounded-full transition-all duration-300 ${
                         index === current ?
-                          "bg-gradient-to-r from-[#574964] to-[#574964] scale-125 shadow-lg ring-2 ring-[#574964] ring-offset-1 ring-offset-gray-900"
+                          "bg-linear-to-r from-[#574964] to-[#574964] scale-125 shadow-lg ring-2 ring-[#574964] ring-offset-1 ring-offset-gray-900"
                         : "bg-[#574964]/60 hover:bg-[#574964] hover:scale-110"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
                 </div>
-                <div className="text-sm font-medium text-white bg-gradient-to-r from-[#574964]/80 to-[#574964]/80 px-3 py-1 rounded-full border border-[#574964]/30">
+                <div className="text-sm font-medium text-white bg-linear-to-r from-[#574964]/80 to-[#574964]/80 px-3 py-1 rounded-full border border-[#574964]/30">
                   {current + 1} / {slides.length}
                 </div>
               </div>

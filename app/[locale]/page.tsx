@@ -7,7 +7,8 @@ import Services from "../components/home/Services";
 import SimpleTechStack from "../components/home/SimpleTechStack";
 import Testimonials from "../components/home/Testimonials";
 
-export default function Home({ params }: { params: { locale: string } }) {
+export default async function Home({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen space-y-8 bg-background-secondary">
       {/* sección de hero img fondo */}
@@ -21,7 +22,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <AboutSection />
 
           {/* sección slider de proyectos destacados */}
-          <FeaturedProjects locale={params.locale} />
+          <FeaturedProjects locale={locale} />
         </div>
         {/* columna derecha  */}
         <div className="space-y-8">
