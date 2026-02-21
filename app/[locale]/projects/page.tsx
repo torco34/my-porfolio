@@ -4,7 +4,6 @@ import MainContent from "@/app/components/projects/MainContent";
 import { useMemo, useState } from "react";
 import ControlBar from "../../components/projects/ControlBar";
 import InterestedCTA from "../../components/projects/InterestedCTA";
-import ProjectsHero from "../../components/projects/ProjectsHero";
 import { projects } from "../../data/dataProjects";
 
 export default function ProjectsPage() {
@@ -12,7 +11,7 @@ export default function ProjectsPage() {
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [showFilters, setShowFilters] = useState(false);
-
+  const [selectedCategory, setSelectedCategory] = useState("");
   // Extract all unique technologies
   const allTechnologies = useMemo(() => {
     const techs = new Set<string>();
@@ -22,10 +21,8 @@ export default function ProjectsPage() {
     return Array.from(techs).sort();
   }, []);
 
-  // Filter projects
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
-      // Search term filter
       const matchesSearch =
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -33,14 +30,17 @@ export default function ProjectsPage() {
           tech.toLowerCase().includes(searchTerm.toLowerCase()),
         );
 
-      // Technology filter
       const matchesTechs =
         selectedTechs.length === 0 ||
         selectedTechs.every((tech) => project.technologies.includes(tech));
 
-      return matchesSearch && matchesTechs;
+      const matchesCategory =
+        selectedCategory === "" ||
+        project.technologies.includes(selectedCategory);
+
+      return matchesSearch && matchesTechs && matchesCategory;
     });
-  }, [searchTerm, selectedTechs]);
+  }, [searchTerm, selectedTechs, selectedCategory]); // 👈 AQUÍ VA EL [
 
   const toggleTech = (tech: string) => {
     setSelectedTechs((prev) =>
@@ -55,22 +55,15 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <ProjectsHero
-        totalProjects={projects.length}
-        totalTechnologies={allTechnologies.length}
-        showingProjects={filteredProjects.length}
-      />
-
       {/* Controls Bar */}
       <ControlBar
         filteredProjects={filteredProjects.length}
         totalProjects={projects.length}
         selectedTechs={selectedTechs}
+        selectedCategory={selectedCategory}
         viewMode={viewMode}
-        showFilters={showFilters}
         onViewModeChange={setViewMode}
-        onToggleFilters={() => setShowFilters(!showFilters)}
+        onCategoryChange={setSelectedCategory}
       />
 
       {/* Main Content */}

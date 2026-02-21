@@ -43,7 +43,7 @@ export default function ExperienceFilters({
                     freelance: translations.filters.freelance,
                     education: translations.filters.education,
                   }[type] || type}
-                </span>
+                </span>{" "}
               </div>
             </button>
           ))}

@@ -29,26 +29,26 @@ export default function ExperienceStats({ stats }: ExperienceStatsProps) {
             </div>
             <div className="text-sm ">{translations.hero.stats.projects}</div>
           </div>
-           <div className="text-center">
-             <div className="flex items-center color-texto justify-center gap-2 mb-2">
-               <Award className="w-6 h-6" />
-               <div className="text-3xl font-bold text-gray-900">
-                 {stats.totalAchievements}
-               </div>
-             </div>
-             <div className="text-sm">
-               {translations.hero.stats.achievements}
-             </div>
-           </div>
-           <div className="text-center">
-             <div className="flex items-center color-texto justify-center gap-2 mb-2">
-               <Code className="w-6 h-6" />
-               <div className="text-3xl font-bold text-gray-900">
-                 {stats.skillsCount}
-               </div>
-             </div>
-             <div className="text-sm ">{translations.hero.stats.skills}</div>
-           </div>
+          <div className="text-center">
+            <div className="flex items-center color-texto justify-center gap-2 mb-2">
+              <Award className="w-6 h-6" />
+              <div className="text-3xl font-bold text-gray-900">
+                {stats.totalAchievements}
+              </div>
+            </div>
+            <div className="text-sm">
+              {translations.hero.stats.achievements}
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="flex items-center color-texto justify-center gap-2 mb-2">
+              <Code className="w-6 h-6" />
+              <div className="text-3xl font-bold text-gray-900">
+                {stats.skillsCount}
+              </div>
+            </div>
+            <div className="text-sm ">{translations.hero.stats.skills}</div>
+          </div>
         </div>
       </div>
     </div>
