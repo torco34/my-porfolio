@@ -2,11 +2,12 @@
 
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import ContactButton from "./ContactButton";
 import LanguageSelector from "./LanguageSelector";
 import Logo from "./Logo";
 
+import { socialLinks } from "@/app/data/dataAbout";
 import { navItems } from "@/app/data/dataHeader";
+import SocialLinks from "../common/SocialLinks";
 import NavLink from "./NavLink";
 import SearchBar from "./components/SearchBar";
 
@@ -37,7 +38,7 @@ export default function Header() {
 
           {/* Desktop Actions - Right side */}
           <div className="hidden md:flex items-center space-x-4">
-            <ContactButton />
+            <SocialLinks socialLinks={socialLinks} />
             <LanguageSelector />
           </div>
 
@@ -74,7 +75,7 @@ export default function Header() {
           ))}
           <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center justify-between px-5">
-              <ContactButton />
+              <SocialLinks socialLinks={socialLinks} />
               <LanguageSelector />
             </div>
           </div>

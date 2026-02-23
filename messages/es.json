@@ -96,6 +96,7 @@
       "viewAll": "Ver todos →"
     }
   },
+
   "Projects": {
     "hero": {
       "title": "Mis Proyectos",
@@ -145,6 +146,7 @@
       "more": "más"
     }
   },
+
   "About": {
     "hero": {
       "connect": "Conéctate conmigo",

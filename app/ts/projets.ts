@@ -13,3 +13,11 @@ export interface ProjectsHeroProps {
   totalTechnologies: number;
   showingProjects: number;
 }
+// ts en controlBar
+export interface ControlBarProps {
+  filteredProjects: number;
+  totalProjects: number;
+  selectedTechs: string[];
+  selectedCategory: string;
+  onCategoryChange: (value: string) => void;
+}
