@@ -3,13 +3,19 @@ import { Project } from "../ts/projets";
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Cotelco - Hotel Management",
+    title: "E-commerce Moderno",
     description:
-      "Sistema completo de gestión hotelera desarrollado con WordPress y Tailwind CSS. Incluye reservas en línea, gestión de habitaciones y panel administrativo personalizado.",
-    image: "/img/img2.jpg",
-    technologies: ["WordPress", "Tailwind CSS", "PHP", "MySQL", "JavaScript"],
-    githubUrl: "https://github.com/torco34/cotelco",
-    demoUrl: "https://cotelco.com",
+      "Aplicación de comercio electrónico con sistema de registro y gestión de roles de usuario (admin, cliente). Incluye autenticación, autorización basada en roles y conexión entre frontend y backend utilizando Next.js, Node.js y Express. Diseño moderno con Tailwind CSS.",
+    image: "/img/ecommerce.jpg",
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Tailwind CSS",
+      "JavaScript",
+    ],
+    githubUrl: "https://github.com/tuusuario/turepositorio",
+    demoUrl: "https://tudemo.com",
   },
   {
     id: 2,

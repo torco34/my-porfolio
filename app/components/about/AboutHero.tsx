@@ -4,6 +4,8 @@ import { Calendar, ExternalLink, Mail, MapPin, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import SocialLinks from "../common/SocialLinks";
+
 interface SocialLink {
   platform: string;
   url: string;
@@ -73,26 +75,9 @@ export default function AboutHero({
           <span>{personalInfo.experience}</span>
         </div>
       </div>
-
+      {/* red social: carpeta common */}
       <div className="mb-8">
-        <h3 className="font-semibold  mb-4">{t("connect")}</h3>
-        <div className="flex justify-center gap-4">
-          {socialLinks.map((social) => {
-            const Icon = social.icon;
-            return (
-              <a
-                key={social.platform}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${social.color} text-white p-3 rounded-full hover:opacity-90 transition-opacity`}
-                aria-label={social.platform}
-              >
-                <Icon className="w-5 h-5" />
-              </a>
-            );
-          })}
-        </div>
+        <SocialLinks title={t("connect")} socialLinks={socialLinks} />
       </div>
 
       <button className="w-full py-3 bg-linear-to-r from-[#574964] to-[#574964] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">

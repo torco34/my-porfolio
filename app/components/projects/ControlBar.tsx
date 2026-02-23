@@ -14,7 +14,7 @@ interface ControlBarProps {
 
 export default function ControlBar({
   filteredProjects,
-  selectedTechs,
+
   selectedCategory,
   viewMode,
   onViewModeChange,
@@ -45,7 +45,7 @@ export default function ControlBar({
               <option value="HTML">Vanilla</option>
             </select>
           </div>
-
+          <p className="text-sm text-gray-600">Contáctame</p>
           {/* Derecha */}
           <div className="flex bg-gray-100 rounded-lg p-1">
             <button
@@ -58,7 +58,6 @@ export default function ControlBar({
             >
               <Grid className="w-4 h-4" />
             </button>
-
             <button
               onClick={() => onViewModeChange("list")}
               className={`p-1.5 rounded-md transition-all ${
