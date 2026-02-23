@@ -109,7 +109,7 @@
     },
     "mainContent": {
       "filters": {
-        "title": "Filtros",
+        "title": "Filtrar por categoría",
         "search": "Buscar proyectos",
         "searchPlaceholder": "Buscar por título, descripción o tecnología...",
         "technologies": "Tecnologías",
