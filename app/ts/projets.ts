@@ -1,7 +1,7 @@
 export type Project = {
-  id: number;
-  title: string;
-  description: string;
+  [x: string]: unknown;
+  id: string;
+
   image: string;
   technologies: string[];
   githubUrl: string;

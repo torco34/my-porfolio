@@ -6,7 +6,7 @@ import ProjectCard from "./ProjectCard";
 
 interface MainContentProps {
   showFilters: boolean;
-  viewMode: "grid" | "list";
+
   filteredProjects: Project[];
   allTechnologies: string[];
   selectedTechs: string[];
@@ -17,7 +17,6 @@ interface MainContentProps {
 }
 
 export default function MainContent({
-  viewMode,
   filteredProjects,
   onClearFilters,
 }: MainContentProps) {
@@ -47,13 +46,7 @@ export default function MainContent({
                 {t("noResults.clearFilters")}
               </button>
             </div>
-          : <div
-              className={
-                viewMode === "grid" ?
-                  "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                : "space-y-6"
-              }
-            >
+          : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
               {filteredProjects.map((project) => (
                 <ProjectCard
                   key={project.id}

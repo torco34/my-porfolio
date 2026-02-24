@@ -1,10 +1,13 @@
 "use client";
 
 import { Project } from "@/app/ts/projets";
-import { ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
-
+import TechBadges from "../common/TechBadges";
+import ToggleExpandButton from "../common/ToggleExpandButton";
+import { technologies } from "../home/data";
 interface ProjectCardProps {
   project: Project;
   translations: {
@@ -27,6 +30,8 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const tCard = useTranslations("Projects.card");
+  const tData = useTranslations("Projects.data");
   return (
     <div className="group relative bg-linear-to-br from-white to-gray-50 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200/50">
       {/* Elemento decorativo de fondo */}
@@ -36,7 +41,7 @@ export default function ProjectCard({
       <div className="relative h-40 overflow-hidden">
         <Image
           src={project.image}
-          alt={project.title}
+          alt={String(project.title)}
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-700"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -45,76 +50,41 @@ export default function ProjectCard({
 
         {/* Badge de tecnologías */}
         <div className="absolute top-4 right-4">
-          <span className="px-4 py-2 bg-linear-to-r from-[#574964]/90 to-[#574964]/90 backdrop-blur-md text-white text-xs font-semibold rounded-full shadow-lg">
-            {project.technologies.length} {translations.techs}
-          </span>
-        </div>
-
-        {/* ID del proyecto */}
-        <div className="absolute bottom-4 left-4">
-          <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-            ID: #{project.id}
-          </span>
+          <div className="flex flex-wrap gap-2 mt-2">
+            <span className="px-4 py-2 bg-linear-to-r from-[#574964]/90 to-[#574964]/90 backdrop-blur-md text-white text-xs font-semibold rounded-full shadow-lg">
+              {project.technologies.length} Techs
+            </span>
+          </div>
         </div>
       </div>
-
-      {/* Project Content */}
       <div className="p-4">
-        {/* Header con título y botón expandir */}
         <div className="flex justify-between items-start mb-5">
           <div className="flex-1">
-            <h3 className="text-lg  font-semibold text-gray-900 group-hover:text-[#574964] transition-colors duration-300">
-              {project.title}
-            </h3>
-            <div className="h-1 w-12 bg-linear-to-r from-[#574964] to-[#574964] rounded-full mt-2 mb-3"></div>
+            <h2>{tData(`${project.id}.title`)}</h2>
+            <div className="h-1 w-5 bg-linear-to-r from-[#574964] to-[#574964] rounded-full mt-2 mb-3"></div>
           </div>
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="ml-4 p-2.5 bg-gray-100 hover:bg-[#574964]/10 rounded-xl transition-all duration-300 group-hover:scale-110"
-            aria-label={
-              isExpanded ? translations.showLess : translations.showMore
-            }
-          >
-            {isExpanded ?
-              <ChevronUp className="w-5 h-5 text-[#574964]" />
-            : <ChevronDown className="w-5 h-5 text-gray-600 group-hover:text-[#574964]" />
-            }
-          </button>
+          <ToggleExpandButton
+            isExpanded={isExpanded}
+            onToggle={() => setIsExpanded(!isExpanded)}
+            labelExpand={tCard("showMore")}
+            labelCollapse={tCard("showLess")}
+          />
         </div>
 
-        {/* Short Description */}
-        <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-          {project.description}
+        <p className="text-gray-700 mt-4">
+          {tData(`${project.id}.shortDescription`)}
         </p>
+        <p className="text-sm my-2"></p>
+        <TechBadges technologies={technologies} moreLabel={t("more")} />
 
-        {/* Technologies Tags mejorados */}
-        <div className="mb-4">
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.slice(0, 4).map((tech, index) => (
-              <span
-                key={index}
-                className="px-3 py-1.5 bg-linear-to-r from-gray-100 to-gray-50 text-gray-700 text-sm font-medium rounded-lg border border-gray-200 hover:border-[#aa60c8]/30 transition-colors"
-              >
-                {tech}
-              </span>
-            ))}
-            {project.technologies.length > 4 && (
-              <span className="px-3 py-1.5 bg-linear-to-r from-[#aa60c8]/10 to-[#ca80e8]/10 text-[#574964] text-sm font-semibold rounded-lg border border-[#aa60c8]/20">
-                +{project.technologies.length - 4} {translations.more}
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Expanded Details */}
         {isExpanded && (
-          <div className="mt-6 pt-6 border-t border-gray-100 animate-fade-in">
-            <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+          <div className="mt-6 pt-2 border-t border-gray-100 animate-fade-in">
+            <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
               <div className="w-2 h-2 bg-[#574964] rounded-full"></div>
               {translations.projectDetails}
             </h4>
-            <p className="text-gray-700 mb-6 leading-relaxed bg-gray-50 p-4 rounded-xl">
-              {project.description}
+            <p className="text-gray-700 mb-2 leading-relaxed bg-gray-50 p-4 rounded-xl">
+              {tData(`${project.id}.longDescription`)}
             </p>
 
             <div className="mb-4">
@@ -135,7 +105,6 @@ export default function ProjectCard({
             </div>
           </div>
         )}
-
         {/* Action Buttons mejorados */}
         <div className="flex justify-between items-center pt-4 border-t border-gray-100">
           <div className="flex gap-3">

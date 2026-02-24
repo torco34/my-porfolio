@@ -25,7 +25,7 @@ export default function ControlBar({
               {filteredProjects === 1 ? t("project") : t("projects")}
               {selectedCategory && (
                 <>
-                  en <span className="font-medium">{selectedCategory}</span>
+                  <span className="font-medium">{selectedCategory}</span>
                 </>
               )}
             </p>

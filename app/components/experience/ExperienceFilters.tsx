@@ -16,9 +16,8 @@ export default function ExperienceFilters({
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
-      {/* filtro */}
-
-      {/* Type Filter */}
+      quiero saber que hay aqui
+      {/* quiero saber
       <div className="mb-6">
         <h4 className="font-medium text-gray-900 mb-3">
           {translations.filters.experienceType}
@@ -48,7 +47,7 @@ export default function ExperienceFilters({
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

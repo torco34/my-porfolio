@@ -97,10 +97,18 @@
     }
   },
   "Projects": {
-    "hero": {
-      "title": "My Projects",
-      "description": "Explore my portfolio of projects developed with the latest technologies. Each project includes detailed description, technologies used and links to code and demo."
+    "data": {
+      "ecommerceModern": {
+        "title": "Modern E-commerce",
+        "shortDescription": "E-commerce with role-based access and authentication.",
+        "longDescription": "E-commerce application with role-based access control, authentication, and a fullstack architecture built with Next.js and Node.js."
+      },
+      "liturgicalCalendar": {
+        "title": "Liturgical Calendar",
+        "shortDescription": "Calendar application for liturgical events with date integration and notifications."
+      }
     },
+
     "mainContent": {
       "filters": {
         "title": "Filter by category",

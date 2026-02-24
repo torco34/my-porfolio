@@ -7,18 +7,13 @@ import {
 } from "@/app/components/experience";
 import { useExperienceFilters } from "@/app/hooks/useExperienceFilters";
 import { useExperienceStats } from "@/app/hooks/useExperienceStats";
-import { useExperienceTranslations } from "@/app/hooks/useExperienceTranslations";
-import { use, useState } from "react";
+import { useState } from "react";
 
-export default function ExperiencePage({
-  params,
-}: {
+export default function ExperiencePage({}: {
   params: Promise<{ locale: string }>;
 }) {
   const [filterType, setFilterType] = useState<string>("all");
 
-  const { locale } = use(params);
-  const translations = useExperienceTranslations();
   const filteredExperiences = useExperienceFilters(filterType, "date");
   const stats = useExperienceStats();
 

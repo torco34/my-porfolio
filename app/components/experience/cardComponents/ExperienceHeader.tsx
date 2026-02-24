@@ -15,8 +15,7 @@ export function ExperienceHeader({
     <div className="flex justify-between items-start">
       <div>
         <div className="flex items-center gap-3 mb-2">
-          <h3 className="text-xl font-bold text-gray-900">{role}</h3>
-
+          <h3 className="text-xl font-bold text-gray-900">{role}</h3>ddd
           {type && (
             <span
               className={`px-3 py-1 rounded-full text-xs font-medium border flex items-center gap-1 ${getTypeConfig(type).color}`}

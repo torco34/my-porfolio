@@ -1,17 +1,22 @@
 "use client";
 
 import MainContent from "@/app/components/projects/MainContent";
+import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import ControlBar from "../../components/projects/ControlBar";
 import InterestedCTA from "../../components/projects/InterestedCTA";
 import { projects } from "../../data/dataProjects";
 
 export default function ProjectsPage() {
+  // const t = useTranslations("Projects.data");
+  const tCard = useTranslations("Projects.card");
+  const tData = useTranslations("Projects.data");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
   const [showFilters, setShowFilters] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
+
   // Extract all unique technologies
   const allTechnologies = useMemo(() => {
     const techs = new Set<string>();
@@ -23,9 +28,12 @@ export default function ProjectsPage() {
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
+      const title = tData(`${project.id}.title`, { default: "" });
+      const description = tData(`${project.id}.description`, { default: "" });
+
       const matchesSearch =
-        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.technologies.some((tech) =>
           tech.toLowerCase().includes(searchTerm.toLowerCase()),
         );
@@ -40,7 +48,7 @@ export default function ProjectsPage() {
 
       return matchesSearch && matchesTechs && matchesCategory;
     });
-  }, [searchTerm, selectedTechs, selectedCategory]); // 👈 AQUÍ VA EL [
+  }, [searchTerm, selectedTechs, selectedCategory, t]);
 
   const toggleTech = (tech: string) => {
     setSelectedTechs((prev) =>
@@ -51,25 +59,21 @@ export default function ProjectsPage() {
   const clearFilters = () => {
     setSearchTerm("");
     setSelectedTechs([]);
+    setSelectedCategory("");
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Controls Bar */}
       <ControlBar
         filteredProjects={filteredProjects.length}
         totalProjects={projects.length}
         selectedTechs={selectedTechs}
         selectedCategory={selectedCategory}
-        viewMode={viewMode}
-        onViewModeChange={setViewMode}
         onCategoryChange={setSelectedCategory}
       />
 
-      {/* Main Content */}
       <MainContent
         showFilters={showFilters}
-        viewMode={viewMode}
         filteredProjects={filteredProjects}
         allTechnologies={allTechnologies}
         selectedTechs={selectedTechs}
@@ -79,7 +83,6 @@ export default function ProjectsPage() {
         onSearchChange={setSearchTerm}
       />
 
-      {/* Call to Action */}
       <InterestedCTA />
     </div>
   );
